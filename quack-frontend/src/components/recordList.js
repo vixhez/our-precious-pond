@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 
-<p>hello!!!</p>
-
 const Record = (props) => (
   <tr>
     <td>{props.record.name}</td>
