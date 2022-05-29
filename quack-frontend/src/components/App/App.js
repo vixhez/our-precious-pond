@@ -1,12 +1,11 @@
 import React from 'react';
 
-import RecordList from './recordList.js';
+import DuckDirectory from '../../components/Directory/DuckDirectory.js';
 
 function App() {
   return (
     <div className="App">
-      <p>hello? anyone there?</p>
-      <RecordList />  
+      <DuckDirectory />  
     </div>
   );
 }
