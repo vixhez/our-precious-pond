@@ -13,10 +13,10 @@ const ObjectId = require("mongodb").ObjectId;
 
 
 // This section will help you get a list of all the ducks.
-duckRoutes.route("/duck").get(function (req, res) {
+duckRoutes.route("/ducks").get(function (req, res) {
   let db_connect = dbo.getDb("Ducks");
   db_connect
-    .collection("ducks")
+    .collection("duck_info")
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
@@ -25,11 +25,11 @@ duckRoutes.route("/duck").get(function (req, res) {
 });
 
 // This section will help you get a single duck by id
-duckRoutes.route("/duck/:id").get(function (req, res) {
+duckRoutes.route("/ducks/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
   db_connect
-      .collection("ducks")
+      .collection("duck_info")
       .findOne(myquery, function (err, result) {
         if (err) throw err;
         res.json(result);
@@ -44,7 +44,7 @@ duckRoutes.route("/duck/add").post(function (req, response) {
     position: req.body.position,
     level: req.body.level,
   };
-  db_connect.collection("ducks").insertOne(myobj, function (err, res) {
+  db_connect.collection("duck_info").insertOne(myobj, function (err, res) {
     if (err) throw err;
     response.json(res);
   });
@@ -62,7 +62,7 @@ duckRoutes.route("/update/:id").post(function (req, response) {
     },
   };
   db_connect
-    .collection("ducks")
+    .collection("duck_info")
     .updateOne(myquery, newvalues, function (err, res) {
       if (err) throw err;
       console.log("1 document updated");
@@ -74,7 +74,7 @@ duckRoutes.route("/update/:id").post(function (req, response) {
 duckRoutes.route("/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
-  db_connect.collection("ducks").deleteOne(myquery, function (err, obj) {
+  db_connect.collection("duck_info").deleteOne(myquery, function (err, obj) {
     if (err) throw err;
     console.log("1 document deleted");
     response.json(obj);
