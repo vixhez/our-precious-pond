@@ -13,10 +13,21 @@ const ObjectId = require("mongodb").ObjectId;
 
 
 // This section will help you get a list of all the ducks.
-duckRoutes.route("/ducks").get(function (req, res) {
+duckRoutes.route("/duck_info").get(function (req, res) {
   let db_connect = dbo.getDb("Ducks");
   db_connect
     .collection("duck_info")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+duckRoutes.route("/duck_quiz").get(function (req, res) {
+  let db_connect = dbo.getDb("Ducks");
+  db_connect
+    .collection("duck_quiz")
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
