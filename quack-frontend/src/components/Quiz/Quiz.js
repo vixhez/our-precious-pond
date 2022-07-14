@@ -24,72 +24,104 @@ export default function DisplayQuiz() {
 		// return; 
 	}, [quizContent.length]);
 
+
+
+
+    function renderQuiz() {
+        console.log('howdy, inside render quiz');
+
+        let quiz = [];
+
+        quizContent.map(quizCategory => {
+            let quizItems = Object.values(quizCategory)[1];
+            console.log('quiz items', quizItems)
+            quizItems.map(quizItem => {
+                console.log('quiz item', quizItem);
+                let answersQuantity = Object.keys(quizItem).filter(key => key.includes('answer')).length;
+
+                let quizItemAnswers = [];
+                for (let i = 0; i < answersQuantity; i++) {
+                    let currentAnswer = `answer_${i+1}`;
+                    quizItemAnswers.push(
+                    <p key={i}>{quizItem[currentAnswer]}</p>
+                    );
+                }
+                
+
+
+                quiz.push(
+                <>
+                    <div className="quiz__item">
+                        <div className="quiz__question">
+                            {quizItem.question}
+                        </div>
+                            <div className="quiz__answers">
+                                {quizItemAnswers}
+                            </div>
+                        </div>
+
+                </>
+                );
+
+            })
+        })
+
+        return quiz;
+    }
+
     return (
-        // quizContent.map((quizCategory, index) => {
+        <div className="quiz">
+            {renderQuiz()};
+        </div>
+    )
+
+
+
+
+
+
+
+    // return (
+
+
+
+        // quizContent.map((quizCategory) => {
+        //     // console.log(quizCategory);
         //     let quizItems = quizCategory[Object.keys(quizCategory)[1]];
+        //     // console.log(quizItems);
         //     return (
-        //         quizItems.map((quizItem, miniIndex) => {
-        //             console.log(Object.keys(quizItem));
-        //             console.log(Object.values(quizItem));
-        //             console.log('index', index + 1);
+        //         quizItems.map((quizItem) => {
+        //             let answersQuantity = Object.keys(quizItem).filter(key => key.includes('answer')).length;
+        //             console.log(quizItem);
         //             return (
         //                 <div className="quiz__item">
         //                     <div className="quiz-item__question">
         //                         <span>{quizItem.question}</span>
         //                     </div>
         //                     <ul className="quiz-item__answers">
-        //                         <p>{index+1}</p>
-        //                         <p>{miniIndex}</p>
-        //                         <p>{miniIndex+1}</p>
-        //                         <li>heyup</li>
-        //                     </ul>
-        //                 </div>
-        //             )
-        //             // refactor above!!!
-                        
-        //         }) 
-        //     )
-            
-        // })
-
-
-        quizContent.map((quizCategory) => {
-            // console.log(quizCategory);
-            let quizItems = quizCategory[Object.keys(quizCategory)[1]];
-            // console.log(quizItems);
-            return (
-                quizItems.map((quizItem) => {
-                    let answersQuantity = Object.keys(quizItem).filter(key => key.includes('answer')).length;
-                    console.log(quizItem);
-                    return (
-                        <div className="quiz__item">
-                            <div className="quiz-item__question">
-                                <span>{quizItem.question}</span>
-                            </div>
-                            <ul className="quiz-item__answers">
-                                {(() => {
-                                    let answers = [];
-                                    for (let i = 0; i < answersQuantity; i++) {
-                                        let currentAnswer = `answer_${i+1}`;
-                                        console.log('cuuurrrrent answer', currentAnswer);
-                                        console.log('tryna access', quizItem[currentAnswer]);
-                                        answers.push(<li>{quizItem[currentAnswer]}</li>);
-                                    }
-                                    return answers;
-                                }
-                                )()}
+        //                         {(() => {
+        //                             let answers = [];
+        //                             for (let i = 0; i < answersQuantity; i++) {
+        //                                 let currentAnswer = `answer_${i+1}`;
+        //                                 console.log('cuuurrrrent answer', currentAnswer);
+        //                                 console.log('tryna access', quizItem[currentAnswer]);
+        //                                 answers.push(<li>{quizItem[currentAnswer]}</li>);
+        //                             }
+        //                             return answers;
+        //                         }
+        //                         )()}
 
                                 
-                            </ul>
-                        </div>
-                    )
+                    //         </ul>
+                    //     </div>
+                    // )
                     // refactor above!!!
                         
-                }) 
-            )
+                // }) 
+            // )
             
-        })
-    )
+        // })
+    // )
 
     
 }
