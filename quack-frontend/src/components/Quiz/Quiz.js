@@ -28,26 +28,31 @@ export default function DisplayQuiz() {
 
 
     function renderQuiz() {
-        console.log('howdy, inside render quiz');
-
         let quiz = [];
 
         quizContent.map(quizCategory => {
             let quizItems = Object.values(quizCategory)[1];
-            console.log('quiz items', quizItems)
             quizItems.map(quizItem => {
-                console.log('quiz item', quizItem);
                 let answersQuantity = Object.keys(quizItem).filter(key => key.includes('answer')).length;
 
                 let quizItemAnswers = [];
                 for (let i = 0; i < answersQuantity; i++) {
                     let currentAnswer = `answer_${i+1}`;
                     quizItemAnswers.push(
-                    <p key={i}>{quizItem[currentAnswer]}</p>
+                        <div className={`quiz-answer_${i}`}>
+                            <input
+                                onChange={() => console.log('0101010')}
+                                type="radio"
+                                id={`${Object.keys(quizCategory)[1]}-answer-${i}`}
+                                name={`${Object.keys(quizCategory)[1]}-answer-${i}`}
+                                value="high"
+                            />
+                            <label htmlFor={`${Object.keys(quizCategory)[1]}-answer-${i}`}>
+                                {quizItem[currentAnswer]}
+                            </label>
+                        </div>
                     );
                 }
-                
-
 
                 quiz.push(
                 <>
@@ -74,56 +79,4 @@ export default function DisplayQuiz() {
             {renderQuiz()};
         </div>
     )
-
-
-
-
-
-
-
-    // return (
-
-
-
-        // quizContent.map((quizCategory) => {
-        //     // console.log(quizCategory);
-        //     let quizItems = quizCategory[Object.keys(quizCategory)[1]];
-        //     // console.log(quizItems);
-        //     return (
-        //         quizItems.map((quizItem) => {
-        //             let answersQuantity = Object.keys(quizItem).filter(key => key.includes('answer')).length;
-        //             console.log(quizItem);
-        //             return (
-        //                 <div className="quiz__item">
-        //                     <div className="quiz-item__question">
-        //                         <span>{quizItem.question}</span>
-        //                     </div>
-        //                     <ul className="quiz-item__answers">
-        //                         {(() => {
-        //                             let answers = [];
-        //                             for (let i = 0; i < answersQuantity; i++) {
-        //                                 let currentAnswer = `answer_${i+1}`;
-        //                                 console.log('cuuurrrrent answer', currentAnswer);
-        //                                 console.log('tryna access', quizItem[currentAnswer]);
-        //                                 answers.push(<li>{quizItem[currentAnswer]}</li>);
-        //                             }
-        //                             return answers;
-        //                         }
-        //                         )()}
-
-                                
-                    //         </ul>
-                    //     </div>
-                    // )
-                    // refactor above!!!
-                        
-                // }) 
-            // )
-            
-        // })
-    // )
-
-    
 }
-
-// consider https://stackoverflow.com/questions/69767735/the-for-loop-inside-react here in terms of creating function outside of element and then calling it in element? related to having an index.js for files

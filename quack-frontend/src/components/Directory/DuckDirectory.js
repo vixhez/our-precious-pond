@@ -28,9 +28,9 @@ export default function DisplayAllDucks() {
 			{ducks.map((duck) => {
 				return (
 					<div className="duck-directory__duck" key={duck.id}>
-						<span>{duck.common_name}</span>
-						<span>{duck.latin_name}</span>
-						<span>{duck.bio}</span>
+						<span className="duck__common-name">{duck.common_name}</span>
+						<span className="duck__latin-name">{duck.latin_name}</span>
+						<span className="duck__bio">{duck.bio}</span>
 					</div>
 				)
 			})}
