@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
+import updateUserScores from '../../app/reducer.js';
+import initial from '../../app/initial';
+import { submitQuiz } from "../../app/actions.js";
+
 // import { Link } from "react-router-dom";
 // import '../index.js';
 
 export default function DisplayQuiz() {
+    
 	const [quizContent, setQuizContent] = useState([]);
-    const [scores, setScores] = useState({
-        activeness_0: 0,
-        activeness_1: 0,
-        vibrance_0: 0,
-        vibrance_1: 0,
-        generosity_0: 0,
-        generosity_1: 0,
-        extroversion_0: 0,
-        extroversion_1: 0
-    });
+    const [state, dispatch] = useReducer(updateUserScores, initial);
 	
 	// This method fetches the records from the database.
 	useEffect(() => {
@@ -54,9 +50,20 @@ export default function DisplayQuiz() {
                         <div className={`quiz__answer`}>
                             <input
                                 onClick={handleInputClick}
+                                // {(event) => {
+                                //     let stateValue = `${event.target.value.split('-')[0]}Score`;
+                                //     let scoreValue = parseInt(event.target.value.split('-')[1]);
+                                //     dispatch({
+                                //         type: "QUIZ_COMPLETED",
+                                //         payload: {
+                                //             key: stateValue,
+                                //             value: scoreValue
+                                //         }
+                                //     })
+                                // }}
                                 type="radio"
                                 id={`${Object.keys(quizCategory)[1]}-answer-${index}-${i}`}
-                                name={`${Object.keys(quizCategory)[1]}_${index}`}
+                                name={`${Object.keys(quizCategory)[1]}${index}`}
                                 value={`${Object.keys(quizCategory)[1]}-${i}`}
                             />
                             <label htmlFor={`${Object.keys(quizCategory)[1]}-answer-${index}`}>
@@ -86,28 +93,36 @@ export default function DisplayQuiz() {
     }
 
     function handleInputClick(event) {
+        let stateValue = `${event.target.name}Score`;
+        let scoreValue = parseInt(event.target.value.split('-')[1]);
+        dispatch({
+            type: "QUIZ_COMPLETED",
+            payload: {
+                key: stateValue,
+                value: scoreValue
+            }
+        })
 
-
-
-        console.log('scores', scores);
-
-        console.log('hello, inside handle input click', event.target.value);
-        let answerValue = parseInt(event.target.value.split('-')[1]);
-
-        setScores({...scores, [event.target.name]: answerValue});
-
-        console.log('scores onceth againeth', scores);
-
-
-        console.log('answer value', answerValue);
     }
 
     return (
-        <div className="quiz">
+        <form
+            className="quiz"
+            // onSubmit={
+            //     (event) => {
+            //         event.preventDefault();
+            //         dispatch({ type: "QUIZ_COMPLETED" })
+            //     }
+            // }
+            >
             {renderQuiz()}
-        </div>
+
+            <button type="submit">quack...</button>
+        </form>
     )
 }
+
+// https://stackoverflow.com/questions/67260648/how-to-submit-the-form-data-into-an-array-using-usereducer-hook-i-have-to-get
 
 // https://stackoverflow.com/questions/46138145/where-should-functions-in-function-components-go refer to this for structure
 

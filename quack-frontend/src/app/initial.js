@@ -13,10 +13,14 @@ const initial = {
     //     activeness2: ''
     // },
 
-    extroversionScore: 5,
-    colourfulnessScore: 5,
-    generosityScore: 5,
-    activenessScore: 5,
+    extroversion0Score: 0,
+    extroversion1Score: 0,
+    vibrance0Score: 0,
+    vibrance1Score: 0,
+    generosity0Score: 0,
+    generosity1Score: 0,
+    activeness0Score: 0,
+    activeness1Score: 0,
 
     quizComplete: false,
 
