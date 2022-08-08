@@ -13,13 +13,19 @@ import './actions.js';
 // export default handleUserScores;
 
 
-const updateUserScores = (state, action) => {
+const reducer = (state, action) => {
     switch (action.type) {
-        case "QUIZ_COMPLETED": return {
+        case 'QUIZ_INPUT_SELECTED': return {
             ...state,
             [action.payload.key]: action.payload.value * 2.5
         }
+        case 'QUIZ_COMPLETED': return {
+            ...state,
+            quizComplete: true
+        }
+        default:
+            return state
     }
  };
 
-export default updateUserScores;
+export default reducer;

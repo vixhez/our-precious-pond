@@ -3,18 +3,27 @@ import updateUserScores from '../../app/reducer.js';
 import initial from '../../app/initial';
 import { submitQuiz } from "../../app/actions.js";
 
+
+import { useSelector, useDispatch } from 'react-redux';
+
 // import { Link } from "react-router-dom";
 // import '../index.js';
 
-export default function DisplayQuiz() {
+export default function DisplayQuiz(props) {
+
+    console.log('rpops inside quiz', props);
+
+
+
+    const dispatch = useDispatch();
+
     
 	const [quizContent, setQuizContent] = useState([]);
-    const [state, dispatch] = useReducer(updateUserScores, initial);
+    // const [state, dispatch] = useReducer(updateUserScores, initial);
 	
 	// This method fetches the records from the database.
 	useEffect(() => {
 		async function getQuestions() {
-            console.log('get questions');
 			let response = await fetch(`http://localhost:5000/duck_quiz`);
 	
 			if (!response.ok) {
@@ -34,8 +43,6 @@ export default function DisplayQuiz() {
 
 
     function renderQuiz() {
-
-        console.log('render quiz');
         let quiz = [];
 
         quizContent.map(quizCategory => {
@@ -96,13 +103,20 @@ export default function DisplayQuiz() {
         let stateValue = `${event.target.name}Score`;
         let scoreValue = parseInt(event.target.value.split('-')[1]);
         dispatch({
-            type: "QUIZ_COMPLETED",
+            type: 'QUIZ_INPUT_SELECTED',
             payload: {
                 key: stateValue,
                 value: scoreValue
             }
         })
 
+    }
+
+    function handleQuizCompletion(event) {
+        event.preventDefault();
+        dispatch({
+            type: 'QUIZ_COMPLETED'
+        })
     }
 
     return (
@@ -117,7 +131,9 @@ export default function DisplayQuiz() {
             >
             {renderQuiz()}
 
-            <button type="submit">quack...</button>
+            <button
+                onClick={handleQuizCompletion}
+            >quack...</button>
         </form>
     )
 }

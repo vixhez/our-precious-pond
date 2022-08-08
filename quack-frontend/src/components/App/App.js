@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import DuckDirectory from '../Directory/DuckDirectory.js';
 import Quiz from '../Quiz/Quiz.js'
+import DuckDirectory from '../Directory/DuckDirectory.js';
+import initial from '../../app/initial';
 
-function App() {
-  return (
-    <div className="App">
-      <p>ello ello ello, it's the quiz</p>
-      <Quiz />
+import { useSelector } from 'react-redux';
 
-      <p>eyup it's the directory</p>
-      <DuckDirectory />
-    </div>
-  );
+function App(props) {
+	const quizComplete = useSelector(state => state.quizComplete);
+	console.log('boudn for the redux quiz ocmplete', quizComplete);
+	// const [quizComplete, setQuizComplete] = useState(false);
+	// console.log('quiz complete', quizComplete)
+
+
+	// useEffect(() => {
+	// 	// console.log('quuuuiiiizc omplete', quizComplete);
+
+	// }, [quizComplete]);
+	return !quizComplete ? (
+			<>
+				<p>ello ello ello, it's the quiz</p>
+				<Quiz />
+			</>
+		) : (
+			<>
+				<p>eyup it's the directory</p>
+				<DuckDirectory />
+			</>
+		)
 }
 
 export default App;
