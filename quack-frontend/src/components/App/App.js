@@ -13,6 +13,7 @@ function App(props) {
 	const ducks = useSelector(state => state.ducks);
 	const ducksLoaded = useSelector(state => state.ducksLoaded);
 	const quizComplete = useSelector(state => state.quizComplete);
+	const duckAlterEgo = useSelector(state => state.duckAlterEgo);
 
 
 	// const [ducks, setDucks] = useState([]);
@@ -49,6 +50,7 @@ function App(props) {
 			</>
 	) : (
 		<>
+			<p>you are a ....... {duckAlterEgo.common_name}</p>
 			<p>eyup it's the directory</p>
 			<DuckDirectory ducks={ducks} />
 		</>
