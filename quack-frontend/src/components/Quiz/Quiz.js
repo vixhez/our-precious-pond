@@ -9,15 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { Link } from "react-router-dom";
 // import '../index.js';
 
-export default function DisplayQuiz(props) {
-
-    console.log('rpops inside quiz', props);
-
-
-
+export default function DisplayQuiz() {
     const dispatch = useDispatch();
 
-    
 	const [quizContent, setQuizContent] = useState([]);
     // const [state, dispatch] = useReducer(updateUserScores, initial);
 	
@@ -57,17 +51,6 @@ export default function DisplayQuiz(props) {
                         <div className={`quiz__answer`}>
                             <input
                                 onClick={handleInputClick}
-                                // {(event) => {
-                                //     let stateValue = `${event.target.value.split('-')[0]}Score`;
-                                //     let scoreValue = parseInt(event.target.value.split('-')[1]);
-                                //     dispatch({
-                                //         type: "QUIZ_COMPLETED",
-                                //         payload: {
-                                //             key: stateValue,
-                                //             value: scoreValue
-                                //         }
-                                //     })
-                                // }}
                                 type="radio"
                                 id={`${Object.keys(quizCategory)[1]}-answer-${index}-${i}`}
                                 name={`${Object.keys(quizCategory)[1]}${index}`}
@@ -90,7 +73,6 @@ export default function DisplayQuiz(props) {
                                 {quizItemAnswers}
                             </div>
                         </div>
-
                 </>
                 );
             })
@@ -114,8 +96,9 @@ export default function DisplayQuiz(props) {
 
     function handleQuizCompletion(event) {
         event.preventDefault();
+        // console.log(store.getState());
         dispatch({
-            type: 'QUIZ_COMPLETED'
+            type: 'CALCULATE_DUCK_ALTEREGO'
         })
     }
 

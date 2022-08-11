@@ -25,7 +25,6 @@ const initial = {
     quizComplete: false,
 
     duckAlterEgo: {},
-    frogAlterEgo: {},
 
     showAllDucks: false
 }
