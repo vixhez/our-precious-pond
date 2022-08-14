@@ -13,6 +13,28 @@ export default function DisplayQuiz() {
     const dispatch = useDispatch();
 
 	const [quizContent, setQuizContent] = useState([]);
+    // const [extroversion0Score, extroversion0ScoreUpdate] = useState(0);
+    // const [extroversion1Score, extroversion1ScoreUpdate] = useState(0);
+    // const [generosity0Score, generosity0ScoreUpdate] = useState(0);
+    // const [generosity1Score, generosity1ScoreUpdate] = useState(0);
+    // const [activeness0Score, activeness0ScoreUpdate] = useState(0);
+    // const [activeness1Score, activeness1ScoreUpdate] = useState(0);
+    // const [vibrance0Score, vibrance0ScoreUpdate] = useState(0);
+    // const [vibrance1Score, vibrance1ScoreUpdate] = useState(0);
+    
+    const [userScores, setUserScores] = useState({
+        extroversion0Score: 0,
+        extroversion1Score: 0,
+        generosity0Score: 0,
+        generosity1Score: 0,
+        activeness0Score: 0,
+        activeness1Score: 0,
+        vibrance0Score: 0,
+        vibrance1Score: 0
+    });
+
+
+
     // const [state, dispatch] = useReducer(updateUserScores, initial);
 	
 	// This method fetches the records from the database.
@@ -84,21 +106,45 @@ export default function DisplayQuiz() {
     function handleInputClick(event) {
         let stateValue = `${event.target.name}Score`;
         let scoreValue = parseInt(event.target.value.split('-')[1]);
-        dispatch({
-            type: 'QUIZ_INPUT_SELECTED',
-            payload: {
-                key: stateValue,
-                value: scoreValue
+
+        console.log('staet value', stateValue);
+        console.log('score value', scoreValue);
+
+        setUserScores(state => {
+            return {
+                ...state,
+                [stateValue]: scoreValue
             }
         })
+
+        
+        
+        // dispatch({
+        //     type: 'QUIZ_INPUT_SELECTED',
+        //     payload: {
+        //         key: stateValue,
+        //         value: scoreValue
+        //     }
+        // })
 
     }
 
     function handleQuizCompletion(event) {
         event.preventDefault();
-        // console.log(store.getState());
+        console.log(userScores);
+        let extroversionScore = userScores.extroversion0Score + userScores.extroversion1Score;
+        let generosityScore = userScores.generosity0Score + userScores.generosity1Score;
+        let activenessScore = userScores.activeness0Score + userScores.activeness1Score;
+        let vibranceScore = userScores.vibrance0Score + userScores.vibrance1Score;
+
         dispatch({
-            type: 'CALCULATE_DUCK_ALTEREGO'
+            type: 'CALCULATE_DUCK_ALTEREGO',
+            payload: {
+                extroversionScore: extroversionScore,
+                generosityScore: generosityScore,
+                activenessScore: activenessScore,
+                vibranceScore: vibranceScore
+            }
         })
     }
 

@@ -34,35 +34,38 @@ const reducer = (state, action) => {
         //     ducks: action.duckData,
         //     ducksLoaded: true
         // }
-        case 'QUIZ_INPUT_SELECTED': return {
-            ...state,
-            [action.payload.key]: action.payload.value * 2.5
-        }
+        // case 'QUIZ_INPUT_SELECTED': return {
+        //     ...state,
+        //     [action.payload.key]: action.payload.value * 2.5
+        // }
         case 'CALCULATE_DUCK_ALTEREGO': {
             console.log('hey in reducer for calculating duckos');
             console.log(state);
+            console.log(action);
 
-            let extroversionScore = state.extroversion0Score + state.extroversion1Score;
-            let vibranceScore = state.vibrance0Score + state.vibrance1Score;
-            let generosityScore = state.generosity0Score + state.generosity1Score;
-            let activenessScore = state.activeness0Score + state.activeness1Score;
+            let extroversionScore = action.payload.extroversionScore * 2.5;
+            let vibranceScore = action.payload.vibranceScore * 2.5;
+            let generosityScore = action.payload.generosityScore * 2.5;
+            let activenessScore = action.payload.activenessScore * 2.5;
 
             console.log('ex', extroversionScore);
             console.log('vib', vibranceScore);
             console.log('gen', generosityScore);
             console.log('act', activenessScore);
 
-            console.log(state.ducks);
+            // console.log(state.ducks);
 
-            state.ducks.map(duck => console.log(duck));
+            // state.ducks.map(duck => console.log(duck));
 
             function findDuckAlterEgo(duck) {
                 console.log('inside find duck alter ego', duck);
 
-                console.log(Math.abs(extroversionScore - duck.extroversion_score))
-                console.log(Math.abs(vibranceScore - duck.vibrance_score))
-                console.log(Math.abs(generosityScore - duck.generosity_score))
-                console.log(Math.abs(activenessScore - duck.activeness_score))
+
+
+                // console.log(Math.abs(extroversionScore - duck.extroversion_score))
+                // console.log(Math.abs(vibranceScore - duck.vibrance_score))
+                // console.log(Math.abs(generosityScore - duck.generosity_score))
+                // console.log(Math.abs(activenessScore - duck.activeness_score))
 
 
                 return (Math.abs(extroversionScore - duck.extroversion_score) < 5 && Math.abs(vibranceScore - duck.vibrance_score) < 5 && Math.abs(generosityScore - duck.generosity_score) < 5 && Math.abs(activenessScore - duck.activeness_score) < 5);
@@ -78,6 +81,10 @@ const reducer = (state, action) => {
             return {
             ...state,
             quizComplete: true,
+            extroversionScore: extroversionScore,
+            generosityScore: generosityScore,
+            activenessScore: activenessScore,
+            vibranceScore: vibranceScore,
             duckAlterEgo: duckAlterEgo
         }
         }

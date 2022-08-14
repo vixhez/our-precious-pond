@@ -4,6 +4,7 @@ import { getDucks } from '../../app/actions';
 
 import Quiz from '../Quiz/Quiz.js'
 import DuckDirectory from '../Directory/DuckDirectory.js';
+import DuckAlterEgo from '../DuckAlterEgo/DuckAlterEgo.js'
 import initial from '../../app/initial';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -50,7 +51,7 @@ function App(props) {
 			</>
 	) : (
 		<>
-			<p>you are a ....... {duckAlterEgo.common_name}!</p>
+			<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
 
 			<p>eyup it's the directory</p>
 			<DuckDirectory ducks={ducks} />
