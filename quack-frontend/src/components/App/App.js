@@ -50,7 +50,8 @@ function App(props) {
 			</>
 	) : (
 		<>
-			<p>you are a ....... {duckAlterEgo.common_name}</p>
+			<p>you are a ....... {duckAlterEgo.common_name}!</p>
+
 			<p>eyup it's the directory</p>
 			<DuckDirectory ducks={ducks} />
 		</>
