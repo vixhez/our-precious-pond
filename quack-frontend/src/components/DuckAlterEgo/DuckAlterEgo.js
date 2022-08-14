@@ -33,10 +33,19 @@ export default function DisplayDuckAlterEgo(props) {
                 <span className="duck-alterego__pop_size">{duckAlterEgo.pop_size}</span>
                 <span className="duck-alterego__status">{duckAlterEgo.status}</span>
             </div>
+            <div className="duck-alterego__gallery">
+                {duckAlterEgo.assets.map(asset => {
+                    console.log(duckAlterEgo.assets);
+                    console.log(asset)
+                    return (
+                        <img className="duck-alterego-gallery__item" src={require(`../../assets/ducks/featured-species/${asset}`)} />
+                    )
+                })}
+            </div>
             <div className="duck-alterego__bio">
                 <span className="duck-alterego__bio">{duckAlterEgo.bio}</span>
                 <span className="duck-alterego__threats">{duckAlterEgo.threats}</span>
-            </div>
+            </div>            
 		</div>
 	)
 }
