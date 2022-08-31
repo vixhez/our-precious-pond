@@ -39,42 +39,60 @@ const reducer = (state, action) => {
         //     [action.payload.key]: action.payload.value * 2.5
         // }
         case 'CALCULATE_DUCK_ALTEREGO': {
-            console.log('hey in reducer for calculating duckos');
-            console.log(state);
-            console.log(action);
 
             let extroversionScore = action.payload.extroversionScore * 2.5;
             let vibranceScore = action.payload.vibranceScore * 2.5;
             let generosityScore = action.payload.generosityScore * 2.5;
             let activenessScore = action.payload.activenessScore * 2.5;
 
-            console.log('ex', extroversionScore);
-            console.log('vib', vibranceScore);
-            console.log('gen', generosityScore);
-            console.log('act', activenessScore);
+            function findDuckAlterEgo() {
+                // console.log('inside find duck alter ego', duck);
 
-            // console.log(state.ducks);
+                let duckMatches = [];
 
-            // state.ducks.map(duck => console.log(duck));
+                for (let i = 0; i < Object.entries(action.payload).length; i++) {
+                    let currentTrait = Object.keys(action.payload)[i].split('Score')[0];
+                    console.log('current trait', currentTrait);
+                    let userTraitScore = Object.values(action.payload)[i] * 2.5;
+                    console.log('user trait score', userTraitScore);
 
-            function findDuckAlterEgo(duck) {
-                console.log('inside find duck alter ego', duck);
+                    console.log('hello quack', state.ducks[3][`${currentTrait}_score`])
+
+                    duckMatches.push(state.ducks.filter(duck => Math.abs(userTraitScore - duck[`${currentTrait}_score`]) < 3));
+                }
+
+                console.log('duck matches', duckMatches);
+                console.log('duck matches flattened', duckMatches.flat())
+
+                let flatDuckMatches = duckMatches.flat();
+                let counts = {};
+                
+                let duckAlterEgo = flatDuckMatches.reduce((acc, currentValue) => {
+
+                  counts[currentValue.common_name] ? counts[currentValue.common_name]++ : counts[currentValue.common_name] = 1;
+                  
+                  console.log('counts prev', counts[acc.common_name]);
+                  console.log('general prev', acc);
+                  console.log('counts current', counts[currentValue.common_name]);
+                  console.log('general current', currentValue);
+
+                  console.log('counts', counts);
+
+                //   return acc > currentValue ? acc : currentValue;
+                return counts[acc.common_name] > counts[currentValue.common_name] ? acc : currentValue;
+                }, {})
+                
 
 
 
-                // console.log(Math.abs(extroversionScore - duck.extroversion_score))
-                // console.log(Math.abs(vibranceScore - duck.vibrance_score))
-                // console.log(Math.abs(generosityScore - duck.generosity_score))
-                // console.log(Math.abs(activenessScore - duck.activeness_score))
 
-
-                return (Math.abs(extroversionScore - duck.extroversion_score) < 5 && Math.abs(vibranceScore - duck.vibrance_score) < 5 && Math.abs(generosityScore - duck.generosity_score) < 5 && Math.abs(activenessScore - duck.activeness_score) < 5);
-
+                return duckAlterEgo;
             }
-            let duckAlterEgo = state.ducks.filter(findDuckAlterEgo)[0];
+  
 
-            console.log('duck alter ego ! ! ! ! ! ! ! ! ! ', duckAlterEgo);
+            // let duckAlterEgo = state.ducks.filter(findDuckAlterEgo);
 
+        let duckAlterEgo = findDuckAlterEgo();
 
 
 

@@ -107,8 +107,8 @@ export default function DisplayQuiz() {
         let stateValue = `${event.target.name}Score`;
         let scoreValue = parseInt(event.target.value.split('-')[1]);
 
-        console.log('staet value', stateValue);
-        console.log('score value', scoreValue);
+        // console.log('staet value', stateValue);
+        // console.log('score value', scoreValue);
 
         setUserScores(state => {
             return {
@@ -131,7 +131,7 @@ export default function DisplayQuiz() {
 
     function handleQuizCompletion(event) {
         event.preventDefault();
-        console.log(userScores);
+        // console.log(userScores);
         let extroversionScore = userScores.extroversion0Score + userScores.extroversion1Score;
         let generosityScore = userScores.generosity0Score + userScores.generosity1Score;
         let activenessScore = userScores.activeness0Score + userScores.activeness1Score;

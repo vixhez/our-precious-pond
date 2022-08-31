@@ -35,8 +35,8 @@ export default function DisplayDuckAlterEgo(props) {
             </div>
             <div className="duck-alterego__gallery">
                 {duckAlterEgo.assets.map(asset => {
-                    console.log(duckAlterEgo.assets);
-                    console.log(asset)
+                    // console.log(duckAlterEgo.assets);
+                    // console.log(asset)
                     return (
                         <img className="duck-alterego-gallery__item" src={require(`../../assets/ducks/featured-species/${asset}`)} />
                     )
