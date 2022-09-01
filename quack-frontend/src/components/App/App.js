@@ -10,6 +10,8 @@ import initial from '../../app/initial';
 
 import { useSelector, useDispatch } from 'react-redux';
 
+import '../../styles/index.css';
+
 function App(props) {
 	const dispatch = useDispatch();
 	const ducks = useSelector(state => state.ducks);

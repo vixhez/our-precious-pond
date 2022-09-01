@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Macondo';
+    src: url(fonts/Macondo-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Hammersmith-One';
+    src: url(fonts/HammersmithOne-Regular.ttf);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Macondo';
+}
+
+h1 {
+    /* text-transform: uppercase; */
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -0.1rem;
+}
+
+* {
+    font-family: 'Hammersmith-One';
+}
