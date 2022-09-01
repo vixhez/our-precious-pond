@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { getDucks } from '../../app/actions';
 
+import Header from '../Header.js';
 import Quiz from '../Quiz/Quiz.js'
 import DuckDirectory from '../Directory/DuckDirectory.js';
 import DuckAlterEgo from '../DuckAlterEgo/DuckAlterEgo.js'
@@ -43,14 +44,18 @@ function App(props) {
 
 	return !quizComplete ? (
 		!ducksLoaded ?
-			<p>one sec, the ducks are on their merry way!!</p>
+			<>
+				<Header />
+				<p>one sec, the ducks are on their merry way!!</p>
+			</>
 		: 
 			<>
-				<p>ello ello ello, it's the quiz</p>
+				<Header />
 				<Quiz />
 			</>
 	) : (
 		<>
+			<Header />
 			<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
 
 			<p>eyup it's the directory</p>
