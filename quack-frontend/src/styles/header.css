@@ -1,0 +1,26 @@
+.app-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.app-header img {
+    width: 40%;
+    /* max-height: auto; */
+}
+
+.app-header h1 {
+    width: 55%;
+    min-width: 25rem;
+    padding-left: 1rem;
+    line-height: 1;
+    text-align: center;
+    margin: 2rem 0 0 0;
+}
+
+.app-header span {
+    font-size: 5rem;
+}

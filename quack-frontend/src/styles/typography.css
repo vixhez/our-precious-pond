@@ -4,12 +4,17 @@
 }
 
 @font-face {
+    font-family: 'Henny-Penny';
+    src: url(fonts/HennyPenny-Regular.ttf);
+}
+
+@font-face {
     font-family: 'Hammersmith-One';
     src: url(fonts/HammersmithOne-Regular.ttf);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Macondo';
+    font-family: 'Henny-Penny';
 }
 
 h1 {
