@@ -6,3 +6,9 @@
     --yellow: rgb(234, 152, 24);
 
 }
+
+.app-container {
+    background-color: var(--light-green);
+    margin: 5rem;
+    border-radius: 10px;
+}

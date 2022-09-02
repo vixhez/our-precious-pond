@@ -44,25 +44,31 @@ function App(props) {
 
 
 
-	return !quizComplete ? (
+	return (
+		<div class='app-container'>
+			<Header />
+			{
+		!quizComplete ? (
 		!ducksLoaded ?
 			<>
-				<Header />
+				{/* <Header /> */}
 				<p>one sec, the ducks are on their merry way!!</p>
 			</>
 		: 
 			<>
-				<Header />
+				{/* <Header /> */}
 				<Quiz />
 			</>
 	) : (
 		<>
-			<Header />
+			{/* <Header /> */}
 			<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
 
 			<p>eyup it's the directory</p>
 			<DuckDirectory ducks={ducks} />
 		</>
+	)}
+	</div>
 	)
 }
 
