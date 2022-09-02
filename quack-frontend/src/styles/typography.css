@@ -21,4 +21,5 @@ h1 {
 
 * {
     font-family: 'Hammersmith-One';
+    color: var(--dark-green);
 }

@@ -7,8 +7,19 @@
 
 }
 
+body {
+    background-color: var(--dark-green);
+}
+
 .app-container {
-    background-color: var(--light-green);
+    background-color: var(--silver);
     margin: 5rem;
     border-radius: 10px;
+    box-shadow: -0.8rem 0.8rem var(--yellow);
+}
+
+@media (min-width: 990px) {
+    .app-container {
+        max-width: 60%;
+    }
 }
