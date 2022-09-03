@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 export default function DisplayAllDucks(props) {
+	const dispatch = useDispatch();
+
 	function toggleDuckInfo(event) {
         event.preventDefault();
 
@@ -15,6 +18,15 @@ export default function DisplayAllDucks(props) {
 			duckInfo.style.display = 'none';
 		}
     }
+
+	function restartQuiz(event) {
+        event.preventDefault();
+
+        dispatch({
+            type: 'RESTART_QUIZ'
+        })
+    }
+	
 	return (
 		<div className="duck-directory__container">
 			{props.ducks.map((duck) => {
@@ -51,6 +63,7 @@ export default function DisplayAllDucks(props) {
 							</span>
 						</div>
 						<button
+							className="button__toggle-info"
 							onClick={toggleDuckInfo}
 						>
 							Read more
@@ -66,6 +79,12 @@ export default function DisplayAllDucks(props) {
 					</div>
 				)
 			})}
+			<button
+                className="button__restart"
+                onClick={restartQuiz}
+            >
+				From the top!
+            </button>  
 		</div>
 	)
 }

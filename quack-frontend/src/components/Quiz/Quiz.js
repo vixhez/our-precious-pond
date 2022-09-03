@@ -161,6 +161,7 @@ export default function DisplayQuiz() {
             {renderQuiz()}
 
             <button
+                className="button__submit-quiz"
                 onClick={handleQuizCompletion}
             >
                 Who am I?!

@@ -107,13 +107,17 @@ const reducer = (state, action) => {
         }
         }
         case 'SHOW_ALL_DUCKS': 
+            return {
+                ...state,
+            showAllDucks: true
 
-           
-        return {
-            ...state,
-           showAllDucks: true
-
-        }
+            }
+        case 'RESTART_QUIZ':
+            return {
+                ...state,
+                quizComplete: false,
+                showAllDucks: false
+            }
         default:
             return state
     }

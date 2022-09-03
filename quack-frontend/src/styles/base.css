@@ -31,12 +31,12 @@ body {
     }
 }
 
-.quiz button,
-.duck-alterego__container button,
-.duck-directory__duck button {
+.quiz button.button__submit-quiz,
+.duck-alterego__container button.button__show-all-ducks,
+.duck-directory__duck button.button__toggle-info,
+.duck-directory__container button.button__restart {
     content: '';
     display: block;
-    margin: 0 auto;
     background-color: var(--dark-green);
     color: var(--yellow);
     width: 7rem;
@@ -47,9 +47,16 @@ body {
     cursor: pointer;
 }
 
-.quiz button:hover,
-.duck-alterego__container button:hover,
-.duck-directory__duck button:hover {
+.quiz button.button__submit-quiz,
+.duck-alterego__container button.button__show-all-ducks,
+.duck-directory__container button.button__restart {
+    margin: 0 auto;
+}
+
+.quiz button.button__submit-quiz:hover,
+.duck-alterego__container button.button__show-all-ducks:hover,
+.duck-directory__duck button.button__toggle-info:hover,
+.duck-directory__container button.button__restart:hover {
     background-color: var(--yellow);
     background-repeat: round;
     /* background-position-y: 0.1rem; */
@@ -57,16 +64,20 @@ body {
     transition: background-image 300ms;
 }
 
-.quiz button:hover {
+.quiz button.button__submit-quiz:hover {
     background-position-x: -0.12rem;
-    background-image: url("../assets/ducks/general-imagery/duck_side_radio_icon.png");
+    background-image: url("../assets/ducks/general-imagery/duck_side_icon.png");
 }
 
-.duck-alterego__container button:hover {
+.duck-alterego__container button.button__show-all-ducks:hover {
     background-position-x: -0.12rem;
-    background-image: url("../assets/ducks/general-imagery/duck_flipper_radio_icon.png");
+    background-image: url("../assets/ducks/general-imagery/duck_flipper_icon.png");
 }
 
-.duck-directory__duck button:hover {
-    background-image: url("../assets/ducks/general-imagery/duck_face_radio_icon.png");
+.duck-directory__duck button.button__toggle-info:hover {
+    background-image: url("../assets/ducks/general-imagery/duck_face_icon.png");
+}
+
+.duck-directory__container button.button__restart:hover {
+    background-image: url("../assets/ducks/general-imagery/duck_wings_icon.png");
 }

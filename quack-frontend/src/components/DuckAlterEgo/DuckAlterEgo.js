@@ -75,6 +75,7 @@ export default function DisplayDuckAlterEgo(props) {
                 </div>
             </div>
             <button
+                className="button__show-all-ducks"
                 onClick={showAllDucks}
             >
                 Show all ducks

@@ -69,6 +69,6 @@ input[type="radio"]:hover::before {
 
 input[type="radio"]:checked::before {
     background-color: var(--yellow);
-    background-image: url("../assets/ducks/general-imagery/duck_side_radio_icon.png");
+    background-image: url("../assets/ducks/general-imagery/duck_side_icon.png");
     background-repeat: round;
 }
