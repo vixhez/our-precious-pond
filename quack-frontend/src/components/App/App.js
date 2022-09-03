@@ -45,7 +45,7 @@ function App(props) {
 
 
 	return (
-		<div class='app-container'>
+		<div className='app-container'>
 			<Header />
 			{
 		!quizComplete ? (
@@ -61,7 +61,7 @@ function App(props) {
 		<>
 			<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
 
-			<p>eyup it's the directory</p>
+			{/* <p>eyup it's the directory</p> */}
 			<DuckDirectory ducks={ducks} />
 		</>
 	)}

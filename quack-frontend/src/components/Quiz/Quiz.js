@@ -162,7 +162,9 @@ export default function DisplayQuiz() {
 
             <button
                 onClick={handleQuizCompletion}
-            >quack...</button>
+            >
+                Who am I?!
+            </button>
         </form>
     )
 }

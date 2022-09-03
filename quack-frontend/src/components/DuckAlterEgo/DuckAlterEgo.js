@@ -10,41 +10,59 @@ export default function DisplayDuckAlterEgo(props) {
     const generosityScore = useSelector(state => state.generosityScore);
     const activenessScore = useSelector(state => state.activenessScore);
 
+    // useEffect(() => {
+    //     // 👇️ scroll to top on page load
+    //     window.scrollTo(0, 0);
+    //   }, []);
+
 	return (
 		<div className="duck-alterego__container">
             <h2>You are a {duckAlterEgo.common_name}!</h2>
-            <div className="user-scores">
-                You...
-                Extroversion: {extroversionScore}
-                Vibrance: {vibranceScore}
-                Generosity: {generosityScore}
-                Activeness: {activenessScore}
+            <div className="duck-alterego__info">
+                <div className="scores__container">
+                    <div className="user-scores">
+                        <span className="user-scores__name">You</span>
+                        <span className="user-scores__score">Extroversion: {extroversionScore}</span>
+                        <span className="user-scores__score">Vibrance: {vibranceScore}</span>
+                        <span className="user-scores__score">Generosity: {generosityScore}</span>
+                        <span className="user-scores__score">Activeness: {activenessScore}</span>
+                    </div>
+                    <div className="duck-alterego-scores">
+                        <span className="duck-alterego-scores__name">The {duckAlterEgo.common_name}</span>
+                        <span className="duck-alterego-scores__score">Extroversion: {duckAlterEgo.extroversion_score}</span>
+                        <span className="duck-alterego-scores__score">Vibrance: {duckAlterEgo.vibrance_score}</span>
+                        <span className="duck-alterego-scores__score">Generosity: {duckAlterEgo.generosity_score}</span>
+                        <span className="duck-alterego-scores__score">Activeness: {duckAlterEgo.activeness_score}</span>
+                    </div>
+                </div>
+                <div className="duck-alterego__stats">
+                    <div className="duck-alterego__latin_name"><span>Latin name:</span> {duckAlterEgo.latin_name}</div>
+                    <div className="duck-alterego__location"><span>Location:</span> {duckAlterEgo.location}</div>
+                    <div className="duck-alterego__pop_size"><span>Population:</span> {duckAlterEgo.pop_size}</div>
+                </div>
             </div>
-            <div className="duck-alterego-scores">
-                The {duckAlterEgo.common_name}...
-                Extroversion: {duckAlterEgo.extroversion_score}
-                Vibrance: {duckAlterEgo.vibrance_score}
-                Generosity: {duckAlterEgo.generosity_score}
-                Activeness: {duckAlterEgo.activeness_score}
+            <div className="duck-alterego__status">
+                    <span>Conservation status:</span> <span className="status--underline">{duckAlterEgo.status}</span>
             </div>
-			<div className="duck-alterego__stats">
-                <span className="duck-alterego__latin_name">{duckAlterEgo.latin_name}</span>
-                <span className="duck-alterego__location">{duckAlterEgo.location}</span>
-                <span className="duck-alterego__pop_size">{duckAlterEgo.pop_size}</span>
-                <span className="duck-alterego__status">{duckAlterEgo.status}</span>
-            </div>
-            <div className="duck-alterego__gallery">
-                {duckAlterEgo.assets.map(asset => {
-                    // console.log(duckAlterEgo.assets);
-                    // console.log(asset)
-                    return (
-                        <img className="duck-alterego-gallery__item" src={require(`../../assets/ducks/featured-species/${asset}`)} />
-                    )
-                })}
-            </div>
-            <div className="duck-alterego__bio">
-                <span className="duck-alterego__bio">{duckAlterEgo.bio}</span>
-                <span className="duck-alterego__threats">{duckAlterEgo.threats}</span>
+            <div className="duck-alterego__gallery-bio">
+                <div className="duck-alterego__gallery">
+                    {duckAlterEgo.assets.map(asset => {
+                        // console.log(duckAlterEgo.assets);
+                        // console.log(asset)
+                        return (
+                            <img className="duck-alterego-gallery__item" src={require(`../../assets/ducks/featured-species/${asset}`)} />
+                        )
+                    })}
+                </div>
+                <div className="duck-alterego__bio">
+                    <div className="duck-alterego__general">
+                        {duckAlterEgo.bio}
+                    </div>
+                    <div className="duck-alterego__threats">
+                        <h6 className="duck-alterego-threats__title">Threats to the {duckAlterEgo.common_name}</h6>
+                        {duckAlterEgo.threats}
+                </div>
+                </div>
             </div>            
 		</div>
 	)

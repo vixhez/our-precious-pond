@@ -1,5 +1,7 @@
 :root {
-    --light-green: rgb(88, 197, 93);
+    /* --light-green: rgb(88, 197, 93); */
+    /* --light-green: rgb(85, 201, 101); */
+    --light-green: rgb(99, 236, 139);
     --dark-green: rgb(14, 58, 16);
     --orange: rgb(201, 85, 51);
     --silver: rgb(179, 171, 164);
@@ -23,8 +25,8 @@ body {
 @media (min-width: 990px) {
     .app-container {
         max-width: 70%;
-        float: right;
-        margin: 5rem;
+        /* float: right; */
+        margin: 5rem auto;
         max-height: 75vh;
     }
 }
