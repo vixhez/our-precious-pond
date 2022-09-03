@@ -106,6 +106,14 @@ const reducer = (state, action) => {
             duckAlterEgo: duckAlterEgo
         }
         }
+        case 'SHOW_ALL_DUCKS': 
+
+           
+        return {
+            ...state,
+           showAllDucks: true
+
+        }
         default:
             return state
     }

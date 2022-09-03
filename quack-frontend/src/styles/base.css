@@ -30,3 +30,43 @@ body {
         max-height: 75vh;
     }
 }
+
+.quiz button,
+.duck-alterego__container button,
+.duck-directory__duck button {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-color: var(--dark-green);
+    color: var(--yellow);
+    width: 7rem;
+    height: 7rem;
+    font-size: 1.5rem;
+    border: solid 0.1rem transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.quiz button:hover,
+.duck-alterego__container button:hover,
+.duck-directory__duck button:hover {
+    background-color: var(--yellow);
+    background-repeat: round;
+    /* background-position-y: 0.1rem; */
+    color: transparent;
+    transition: background-image 300ms;
+}
+
+.quiz button:hover {
+    background-position-x: -0.12rem;
+    background-image: url("../assets/ducks/general-imagery/duck_side_radio_icon.png");
+}
+
+.duck-alterego__container button:hover {
+    background-position-x: -0.12rem;
+    background-image: url("../assets/ducks/general-imagery/duck_flipper_radio_icon.png");
+}
+
+.duck-directory__duck button:hover {
+    background-image: url("../assets/ducks/general-imagery/duck_face_radio_icon.png");
+}

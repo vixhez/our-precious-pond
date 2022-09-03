@@ -18,6 +18,7 @@ function App(props) {
 	const ducksLoaded = useSelector(state => state.ducksLoaded);
 	const quizComplete = useSelector(state => state.quizComplete);
 	const duckAlterEgo = useSelector(state => state.duckAlterEgo);
+	const showAllDucks = useSelector(state => state.showAllDucks);
 
 
 	// const [ducks, setDucks] = useState([]);
@@ -48,24 +49,19 @@ function App(props) {
 		<div className='app-container'>
 			<Header />
 			{
-		!quizComplete ? (
-		!ducksLoaded ?
-			<>
-				<p>one sec, the ducks are on their merry way!!</p>
-			</>
-		: 
-			<>
-				<Quiz />
-			</>
-	) : (
-		<>
-			<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
-
-			{/* <p>eyup it's the directory</p> */}
-			<DuckDirectory ducks={ducks} />
-		</>
-	)}
-	</div>
+				!quizComplete ? (
+				!ducksLoaded ?
+					<p>one sec, the ducks are on their merry way!!</p>
+				: 
+					<Quiz />
+			) : (
+				!showAllDucks ? (
+					<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
+				) : (
+					<DuckDirectory ducks={ducks} />
+				)
+			)}
+		</div>
 	)
 }
 

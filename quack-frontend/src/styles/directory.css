@@ -1,0 +1,63 @@
+.duck-directory__container {
+    padding: 1rem;
+}
+
+.duck-directory__duck {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.duck-directory__duck .duck__img {
+    max-width: 15rem;
+    height: auto;
+}
+
+.duck-directory__duck .duck__stats {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 40%;
+}
+
+.duck-directory__duck .duck__stats * {
+    margin-bottom: 0.2rem;
+}
+
+.duck-directory__duck .duck__common-name {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-family: 'Henny-Penny';
+    margin-bottom: 0.5rem;
+    /* color: var(--light-green); */
+}
+
+.duck__stats .duck__stats--underline {
+    text-decoration: underline;
+    text-decoration-color: var(--light-green);
+    text-decoration-thickness: 0.1rem;
+    text-decoration-skip-ink: none;
+}
+
+.duck-directory__duck .duck__status {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 0.3rem;
+    text-decoration-skip-ink: none;
+}
+
+.duck-directory__duck .duck__bio {
+    display: none;
+    white-space: break-spaces
+}
+
+.duck__bio .duck__threats {
+    margin-top: 1.2rem;
+}
+
+.duck-directory__duck button {
+    margin: 0 3rem 0 auto;
+}

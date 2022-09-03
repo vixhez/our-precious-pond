@@ -69,31 +69,6 @@ input[type="radio"]:hover::before {
 
 input[type="radio"]:checked::before {
     background-color: var(--yellow);
-    background-image: url("../assets/ducks/general-imagery/duck_radio_icon.png");
+    background-image: url("../assets/ducks/general-imagery/duck_side_radio_icon.png");
     background-repeat: round;
-}
-
-.quiz button {
-    content: '';
-    display: block;
-    margin: 0 auto;
-    background-color: var(--dark-green);
-    color: var(--yellow);
-    width: 7rem;
-    height: 7rem;
-    font-size: 1.5rem;
-    border: solid 0.1rem transparent;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.quiz button:hover {
-    background-color: var(--yellow);
-    background-image: url("../assets/ducks/general-imagery/duck_radio_icon.png");
-    /* border: solid 2rem var(--yellow); */
-    background-repeat: round;
-    background-position-x: calc(100% - 0.1rem);
-    /* background-position-y: 0.1rem; */
-    color: transparent;
-    /* transition: background-image 300ms; */
 }

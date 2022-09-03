@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 // import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 export default function DisplayDuckAlterEgo(props) {
+    const dispatch = useDispatch();
     let { duckAlterEgo } = props;
 
     const extroversionScore = useSelector(state => state.extroversionScore);
     const vibranceScore = useSelector(state => state.vibranceScore);
     const generosityScore = useSelector(state => state.generosityScore);
     const activenessScore = useSelector(state => state.activenessScore);
+
+    function showAllDucks(event) {
+        event.preventDefault();
+
+        dispatch({
+            type: 'SHOW_ALL_DUCKS'
+        })
+    }
 
     // useEffect(() => {
     //     // 👇️ scroll to top on page load
@@ -63,7 +73,12 @@ export default function DisplayDuckAlterEgo(props) {
                         {duckAlterEgo.threats}
                 </div>
                 </div>
-            </div>            
+            </div>
+            <button
+                onClick={showAllDucks}
+            >
+                Show all ducks
+            </button>            
 		</div>
 	)
 }
