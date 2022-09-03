@@ -12,7 +12,7 @@ export default function DisplayDuckAlterEgo(props) {
 
 	return (
 		<div className="duck-alterego__container">
-            <h1>You are a {duckAlterEgo.common_name}!</h1>
+            <h2>You are a {duckAlterEgo.common_name}!</h2>
             <div className="user-scores">
                 You...
                 Extroversion: {extroversionScore}

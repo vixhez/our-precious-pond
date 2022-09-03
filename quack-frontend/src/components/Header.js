@@ -5,7 +5,7 @@ export default function Header() {
         <div class="app-header">
             <img src={Mallard} alt="" />
             <h1>Our Precious Pond</h1>
-            <span>✧</span>
+            {/* <span>✧</span> */}
         </div>
     )
 }

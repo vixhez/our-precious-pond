@@ -13,14 +13,18 @@ body {
 
 .app-container {
     background-color: var(--silver);
-    margin: 5rem;
+    margin: 2rem;
     border-radius: 10px;
     box-shadow: -0.8rem 0.8rem var(--yellow);
+    max-height: 90vh;
+    overflow-y: scroll;
 }
 
 @media (min-width: 990px) {
     .app-container {
         max-width: 70%;
         float: right;
+        margin: 5rem;
+        max-height: 75vh;
     }
 }

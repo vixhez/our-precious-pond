@@ -51,17 +51,14 @@ function App(props) {
 		!quizComplete ? (
 		!ducksLoaded ?
 			<>
-				{/* <Header /> */}
 				<p>one sec, the ducks are on their merry way!!</p>
 			</>
 		: 
 			<>
-				{/* <Header /> */}
 				<Quiz />
 			</>
 	) : (
 		<>
-			{/* <Header /> */}
 			<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
 
 			<p>eyup it's the directory</p>

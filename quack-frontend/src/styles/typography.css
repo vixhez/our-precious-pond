@@ -19,9 +19,15 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     /* text-transform: uppercase; */
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 900;
     letter-spacing: -0.1rem;
+}
+
+@media (min-width: 750px) {
+    h1 {
+        font-size: 5rem;
+    }
 }
 
 * {
