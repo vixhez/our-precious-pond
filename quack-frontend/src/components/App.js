@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getDucks } from '../app/actions';
 
 import Header from './Header.js';
+import Info from './Info.js';
 import Quiz from './Quiz.js'
 import DuckDirectory from './DuckDirectory.js';
 import DuckAlterEgo from './DuckAlterEgo.js'
@@ -48,6 +49,7 @@ function App(props) {
 	return (
 		<div className='app-container'>
 			<Header />
+			<Info />
 			{
 				!quizComplete ? (
 				!ducksLoaded ?
