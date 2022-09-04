@@ -6,8 +6,6 @@ export default function Info() {
 
         let appContainer = event.target.closest('.app-container');
         let infoModal = appContainer.querySelector('.info__modal');
-        console.log('hiya we out here')
-        console.log(event.target);
         if (infoModal.clientHeight === 0) {
             infoModal.style.display = 'flex';
             event.target.textContent = 'X';
