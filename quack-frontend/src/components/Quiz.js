@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useReducer } from "react";
-import updateUserScores from '../../app/reducer.js';
-import initial from '../../app/initial';
-import { submitQuiz } from "../../app/actions.js";
+import updateUserScores from '../app/reducer.js';
+import initial from '../app/initial';
+import { submitQuiz } from "../app/actions.js";
 
 
 import { useSelector, useDispatch } from 'react-redux';

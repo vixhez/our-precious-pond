@@ -11,6 +11,7 @@
 
 body {
     background-color: var(--dark-green);
+    /* position: relative; */
 }
 
 .app-container {

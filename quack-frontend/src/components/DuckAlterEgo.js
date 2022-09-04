@@ -60,7 +60,7 @@ export default function DisplayDuckAlterEgo(props) {
                         // console.log(duckAlterEgo.assets);
                         // console.log(asset)
                         return (
-                            <img className="duck-alterego-gallery__item" src={require(`../../assets/ducks/featured-species/${asset}`)} />
+                            <img className="duck-alterego-gallery__item" src={require(`../assets/ducks/featured-species/${asset}`)} />
                         )
                     })}
                 </div>

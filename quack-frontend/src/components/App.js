@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-import { getDucks } from '../../app/actions';
+import { getDucks } from '../app/actions';
 
-import Header from '../Header.js';
-import Quiz from '../Quiz/Quiz.js'
-import DuckDirectory from '../Directory/DuckDirectory.js';
-import DuckAlterEgo from '../DuckAlterEgo/DuckAlterEgo.js'
-import initial from '../../app/initial';
+import Header from './Header.js';
+import Quiz from './Quiz.js'
+import DuckDirectory from './DuckDirectory.js';
+import DuckAlterEgo from './DuckAlterEgo.js'
+import initial from '../app/initial';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import '../../styles/index.css';
+import '../styles/index.css';
 
 function App(props) {
 	const dispatch = useDispatch();

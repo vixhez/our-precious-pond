@@ -32,7 +32,7 @@ export default function DisplayAllDucks(props) {
 			{props.ducks.map((duck) => {
 				return (
 					<div className="duck-directory__duck" key={duck.id}>
-						<img className="duck__img" src={require(`../../assets/ducks/featured-species/${duck.assets[0]}`)} />
+						<img className="duck__img" src={require(`../assets/ducks/featured-species/${duck.assets[0]}`)} />
 						<div className="duck__stats">
 							<span className="duck__common-name">
 								{duck.common_name}
