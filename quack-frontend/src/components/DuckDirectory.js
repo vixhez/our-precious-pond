@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function DisplayAllDucks(props) {
 	const dispatch = useDispatch();
+	const showAllDucks = useSelector(state => state.showAllDucks);
+
+	useEffect(() => {
+        let appContainer = document.querySelector('.app-container');
+        appContainer.scrollTo(0, 0);
+    }, [showAllDucks]);
 
 	function toggleDuckInfo(event) {
         event.preventDefault();

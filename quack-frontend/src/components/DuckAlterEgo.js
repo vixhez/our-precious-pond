@@ -12,6 +12,11 @@ export default function DisplayDuckAlterEgo(props) {
     const generosityScore = useSelector(state => state.generosityScore);
     const activenessScore = useSelector(state => state.activenessScore);
 
+    useEffect(() => {
+        let appContainer = document.querySelector('.app-container');
+        appContainer.scrollTo(0, 0);
+    }, [duckAlterEgo]);
+
     function showAllDucks(event) {
         event.preventDefault();
 
@@ -19,11 +24,6 @@ export default function DisplayDuckAlterEgo(props) {
             type: 'SHOW_ALL_DUCKS'
         })
     }
-
-    // useEffect(() => {
-    //     // 👇️ scroll to top on page load
-    //     window.scrollTo(0, 0);
-    //   }, []);
 
 	return (
 		<div className="duck-alterego__container">
