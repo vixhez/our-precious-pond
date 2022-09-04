@@ -13,7 +13,7 @@ export default function DisplayDuckAlterEgo(props) {
     const activenessScore = useSelector(state => state.activenessScore);
 
     useEffect(() => {
-        let appContainer = document.querySelector('.app-container');
+        let appContainer = document.querySelector('.app__container');
         appContainer.scrollTo(0, 0);
     }, [duckAlterEgo]);
 

@@ -1,5 +1,5 @@
 
-.app-container .info__container {
+.app__container .info__container {
     width: 100%;
 }
 
@@ -20,11 +20,15 @@
     z-index: 2;
 }
 
+.info__container .button__toggle-info-modal.modal--open {
+    right: 2rem;
+}
+
 .info__container .button__toggle-info-modal:hover {
     color: var(--yellow);
 }
 
-.app-container .info__modal {
+.info__container .info__modal {
     display: none;
     position: absolute;
     top: 0;
@@ -42,7 +46,7 @@
 }
 
 @media (min-width: 990px) {
-    .app-container .info__modal {
+    .app__container .info__modal {
         /* max-width: 80%; */
         padding: 5rem 2rem 2rem 2rem;
 

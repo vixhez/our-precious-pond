@@ -47,7 +47,7 @@ function App(props) {
 
 
 	return (
-		<div className='app-container'>
+		<div className='app__container'>
 			<Header />
 			<Info />
 			{
