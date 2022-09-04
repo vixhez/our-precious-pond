@@ -9,12 +9,12 @@ export default function Info() {
         if (infoModal.clientHeight === 0) {
             infoModal.style.display = 'flex';
             event.target.textContent = 'X';
-            // event.target.style.right = '2rem';
+            if (window.innerWidth > 990) event.target.style.right = '2rem';
             appContainer.style.overflowY = 'hidden';
         } else {
             infoModal.style.display = 'none';
             event.target.textContent = 'i';
-            // event.target.style.right = '1rem';
+            if (window.innerWidth > 990) event.target.style.right = '1rem';
             appContainer.style.overflowY = 'scroll';
         }
     }
