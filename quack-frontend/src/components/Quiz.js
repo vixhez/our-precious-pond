@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useReducer } from "react";
-import updateUserScores from '../app/reducer.js';
-import initial from '../app/initial';
+import React, { useEffect, useState } from "react";
 import { submitQuiz } from "../app/actions.js";
 
 
@@ -13,14 +11,6 @@ export default function DisplayQuiz() {
     const dispatch = useDispatch();
 
 	const [quizContent, setQuizContent] = useState([]);
-    // const [extroversion0Score, extroversion0ScoreUpdate] = useState(0);
-    // const [extroversion1Score, extroversion1ScoreUpdate] = useState(0);
-    // const [generosity0Score, generosity0ScoreUpdate] = useState(0);
-    // const [generosity1Score, generosity1ScoreUpdate] = useState(0);
-    // const [activeness0Score, activeness0ScoreUpdate] = useState(0);
-    // const [activeness1Score, activeness1ScoreUpdate] = useState(0);
-    // const [vibrance0Score, vibrance0ScoreUpdate] = useState(0);
-    // const [vibrance1Score, vibrance1ScoreUpdate] = useState(0);
     
     const [userScores, setUserScores] = useState({
         extroversion0Score: 0,
@@ -33,11 +23,6 @@ export default function DisplayQuiz() {
         vibrance1Score: 0
     });
 
-
-
-    // const [state, dispatch] = useReducer(updateUserScores, initial);
-	
-	// This method fetches the records from the database.
 	useEffect(() => {
 		async function getQuestions() {
 			let response = await fetch(`http://localhost:5000/duck_quiz`);
