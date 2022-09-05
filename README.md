@@ -20,3 +20,9 @@ In the terminal...
 4. Start the app by running `npm start`
 
 5. Head to (http://localhost:3000/) to view the app
+
+![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-quiz.png)
+![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-alterego.png)
+![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-alterego-2.png)
+![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-alterego-3.png)
+![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-directory.png)
