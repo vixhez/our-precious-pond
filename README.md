@@ -21,8 +21,8 @@ In the terminal...
 
 5. Head to (http://localhost:3000/) to view the app
 
-![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-quiz.png)
-![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-alterego.png)
-![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-alterego-2.png)
-![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-alterego-3.png)
-![Quiz](https://github.com/vixhez/our-precious-pond/app-screenshot-directory.png)
+![Quiz](https://github.com/vixhez/our-precious-pond/blob/main/app-screenshot-quiz.png)
+![Alter-ego](https://github.com/vixhez/our-precious-pond/blob/main/app-screenshot-alterego.png)
+![Alter-ego](https://github.com/vixhez/our-precious-pond/blob/main/app-screenshot-alterego-2.png)
+![Alter-ego](https://github.com/vixhez/our-precious-pond/blob/main/app-screenshot-alterego-3.png)
+![Duck directory](https://github.com/vixhez/our-precious-pond/blob/main/app-screenshot-directory.png)
