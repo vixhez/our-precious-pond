@@ -22,7 +22,6 @@ const reducer = (state, action) => {
 
                 for (let i = 0; i < Object.entries(action.payload).length; i++) {
                     let currentTrait = Object.keys(action.payload)[i].split('Score')[0];
-                    console.log('current trait', currentTrait);
                     let userTraitScore = Object.values(action.payload)[i] * 2.5;
 
                     duckMatches.push(state.ducks.filter(duck => Math.abs(userTraitScore - duck[`${currentTrait}_score`]) < 3));
