@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { submitQuiz } from "../app/actions.js";
-
-
 import { useSelector, useDispatch } from 'react-redux';
-
-// import { Link } from "react-router-dom";
-// import '../index.js';
 
 export default function DisplayQuiz() {
     const dispatch = useDispatch();
@@ -38,7 +33,6 @@ export default function DisplayQuiz() {
 		}
 	
 		getQuestions();
-		// return; 
 	}, [quizContent.length]);
 
 
@@ -76,10 +70,10 @@ export default function DisplayQuiz() {
                         <div className="quiz__question">
                             {quizItem.question}
                         </div>
-                            <div className="quiz__answers-container">
-                                {quizItemAnswers}
-                            </div>
+                        <div className="quiz__answers-container">
+                            {quizItemAnswers}
                         </div>
+                    </div>
                 </>
                 );
             })
@@ -92,31 +86,16 @@ export default function DisplayQuiz() {
         let stateValue = `${event.target.name}Score`;
         let scoreValue = parseInt(event.target.value.split('-')[1]);
 
-        // console.log('staet value', stateValue);
-        // console.log('score value', scoreValue);
-
         setUserScores(state => {
             return {
                 ...state,
                 [stateValue]: scoreValue
             }
         })
-
-        
-        
-        // dispatch({
-        //     type: 'QUIZ_INPUT_SELECTED',
-        //     payload: {
-        //         key: stateValue,
-        //         value: scoreValue
-        //     }
-        // })
-
     }
 
     function handleQuizCompletion(event) {
         event.preventDefault();
-        // console.log(userScores);
         let extroversionScore = userScores.extroversion0Score + userScores.extroversion1Score;
         let generosityScore = userScores.generosity0Score + userScores.generosity1Score;
         let activenessScore = userScores.activeness0Score + userScores.activeness1Score;
@@ -134,15 +113,7 @@ export default function DisplayQuiz() {
     }
 
     return (
-        <form
-            className="quiz"
-            // onSubmit={
-            //     (event) => {
-            //         event.preventDefault();
-            //         dispatch({ type: "QUIZ_COMPLETED" })
-            //     }
-            // }
-            >
+        <form className="quiz">
             {renderQuiz()}
 
             <button
@@ -154,13 +125,3 @@ export default function DisplayQuiz() {
         </form>
     )
 }
-
-// https://stackoverflow.com/questions/67260648/how-to-submit-the-form-data-into-an-array-using-usereducer-hook-i-have-to-get
-
-// https://stackoverflow.com/questions/46138145/where-should-functions-in-function-components-go refer to this for structure
-
-// look into how to stop re-rendering on load https://linguinecode.com/post/how-to-avoid-multiple-re-renders-in-react-shouldcomponentupdate 
-
-//https://medium.com/@katestamas/dynamically-update-states-in-react-7558287e5fb9
-
-// https://stackoverflow.com/questions/29280445/reactjs-setstate-with-a-dynamic-key-name

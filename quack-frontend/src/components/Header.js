@@ -41,12 +41,10 @@ export default function Header() {
     return (
         <>
             <div className="app-header--sticky__filler"></div>
-            {/* <div className="app-header__container"> */}
-                <div className="app__header">
-                    <img src={Mallard} alt="" />
-                    <h1>Our Precious Pond</h1>
-                </div>
-            {/* </div> */}
+            <div className="app__header">
+                <img src={Mallard} alt="" />
+                <h1>Our Precious Pond</h1>
+            </div>
         </>
     )
 }

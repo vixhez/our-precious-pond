@@ -8,9 +8,7 @@ import Quiz from './Quiz.js'
 import DuckDirectory from './DuckDirectory.js';
 import DuckAlterEgo from './DuckAlterEgo.js'
 import initial from '../app/initial';
-
 import { useSelector, useDispatch } from 'react-redux';
-
 import '../styles/index.css';
 
 function App(props) {
@@ -21,10 +19,6 @@ function App(props) {
 	const duckAlterEgo = useSelector(state => state.duckAlterEgo);
 	const showAllDucks = useSelector(state => state.showAllDucks);
 
-
-	// const [ducks, setDucks] = useState([]);
-	
-	// This method fetches the records from the database.
 	useEffect(() => {
 		async function getDucks() {
 			let response = await fetch(`http://localhost:5000/duck_info`);

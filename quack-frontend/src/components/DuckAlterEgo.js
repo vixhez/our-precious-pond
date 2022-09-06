@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
-// import { Link } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function DisplayDuckAlterEgo(props) {
     const dispatch = useDispatch();
@@ -57,8 +55,6 @@ export default function DisplayDuckAlterEgo(props) {
             <div className="duck-alterego__gallery-bio">
                 <div className="duck-alterego__gallery">
                     {duckAlterEgo.assets.map(asset => {
-                        // console.log(duckAlterEgo.assets);
-                        // console.log(asset)
                         return (
                             <img className="duck-alterego-gallery__item" src={require(`../assets/ducks/featured-species/${asset}`)} />
                         )
@@ -83,7 +79,3 @@ export default function DisplayDuckAlterEgo(props) {
 		</div>
 	)
 }
-
-
-
-// update the way that scores are rendering - turn into a loop?

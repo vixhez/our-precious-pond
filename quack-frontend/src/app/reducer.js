@@ -2,52 +2,22 @@ import { useReducer } from "react";
 import initial from './initial';
 // import './actions.js';
 
-// const handleUserScores = (state, action) => ({
-//     ...state,
-//     activenessScore: state.activenessScore + action.scores.activeness_1 + action.scores.activeness_2,
-//     // vibranceScore: state.vibranceScore + action.data.vibrance_1 + action.data.vibrance_2,
-//     // generosityScore: state.generosityScore + action.data.generosity_1 + action.data.generosity_2,
-//     // extroversion: state.extroversionScore + action.data.extroversion_1 + action.data.extroversion_2
-//  });
-
-// export default handleUserScores;
-
-
 const reducer = (state, action) => {
     switch (action.type) {
         case 'GET_DUCKS': 
-
-           
             return {
                 ...state,
                 ducks: action.duckData,
                 ducksLoaded: true
 
             }
-			// dispatch({
-			// 	type: 'DUCKS_LOADED',
-			// 	duckData: duckData
-			// })
-        
-        // case 'DUCKS_LOADED': return {
-        //     ...state,
-        //     ducks: action.duckData,
-        //     ducksLoaded: true
-        // }
-        // case 'QUIZ_INPUT_SELECTED': return {
-        //     ...state,
-        //     [action.payload.key]: action.payload.value * 2.5
-        // }
         case 'CALCULATE_DUCK_ALTEREGO': {
-
             let extroversionScore = action.payload.extroversionScore * 2.5;
             let vibranceScore = action.payload.vibranceScore * 2.5;
             let generosityScore = action.payload.generosityScore * 2.5;
             let activenessScore = action.payload.activenessScore * 2.5;
 
             function findDuckAlterEgo() {
-                // console.log('inside find duck alter ego', duck);
-
                 let duckMatches = [];
 
                 for (let i = 0; i < Object.entries(action.payload).length; i++) {
@@ -62,30 +32,24 @@ const reducer = (state, action) => {
                 let counts = {};
                 
                 let duckAlterEgo = flatDuckMatches.reduce((acc, currentValue) => {
-
-                  counts[currentValue.common_name] ? counts[currentValue.common_name]++ : counts[currentValue.common_name] = 1;
-
-                //   return acc > currentValue ? acc : currentValue;
-                return counts[acc.common_name] > counts[currentValue.common_name] ? acc : currentValue;
+                    counts[currentValue.common_name] ? counts[currentValue.common_name]++ : counts[currentValue.common_name] = 1;
+                    //   return acc > currentValue ? acc : currentValue;
+                    return counts[acc.common_name] > counts[currentValue.common_name] ? acc : currentValue;
                 }, {})
                 
                 return duckAlterEgo;
             }
   
-
-        let duckAlterEgo = findDuckAlterEgo();
-
-
-
-            return {
-            ...state,
-            quizComplete: true,
-            extroversionScore: extroversionScore,
-            generosityScore: generosityScore,
-            activenessScore: activenessScore,
-            vibranceScore: vibranceScore,
-            duckAlterEgo: duckAlterEgo
-        }
+            let duckAlterEgo = findDuckAlterEgo();
+                return {
+                ...state,
+                quizComplete: true,
+                extroversionScore: extroversionScore,
+                generosityScore: generosityScore,
+                activenessScore: activenessScore,
+                vibranceScore: vibranceScore,
+                duckAlterEgo: duckAlterEgo
+            }
         }
         case 'SHOW_ALL_DUCKS': 
             return {
