@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Macondo';
+    src: url(fonts/Macondo-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Henny-Penny';
+    src: url(fonts/HennyPenny-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Hammersmith-One';
+    src: url(fonts/HammersmithOne-Regular.ttf);
+}
+
+h1, h2 {
+    font-family: 'Henny-Penny';
+}
+
+h1 {
+    /* text-transform: uppercase; */
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.1rem;
+}
+
+@media (min-width: 750px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+* {
+    font-family: 'Hammersmith-One';
+    color: var(--dark-green);
+}

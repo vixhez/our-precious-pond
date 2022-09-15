@@ -1,0 +1,92 @@
+:root {
+    /* --light-green: rgb(88, 197, 93); */
+    /* --light-green: rgb(85, 201, 101); */
+    --light-green: rgb(99, 236, 139);
+    --dark-green: rgb(14, 58, 16);
+    /* --dark-green: #2b6633; */
+    /* --dark-green: fuschia; */
+    /* --orange: rgb(201, 85, 51); */
+    --orange: #fc8236;
+    /* --silver: rgb(179, 171, 164); */
+    --silver: rgb(225, 219, 210);
+    --yellow: rgb(234, 152, 24);
+
+}
+
+body {
+    background-color: var(--dark-green);
+    /* position: relative; */
+}
+
+.app__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--silver);
+    margin: 2rem;
+    border-radius: 10px;
+    box-shadow: -0.8rem 0.8rem var(--yellow);
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+
+@media (min-width: 990px) {
+    .app__container {
+        max-width: 70%;
+        /* float: right; */
+        margin: 5rem auto;
+        max-height: 75vh;
+    }
+}
+
+.quiz button.button__submit-quiz,
+.duck-alterego__container button.button__show-all-ducks,
+.duck-directory__duck button.button__toggle-info,
+.duck-directory__container button.button__restart {
+    content: '';
+    display: block;
+    background-color: var(--dark-green);
+    color: var(--yellow);
+    width: 7rem;
+    height: 7rem;
+    font-size: 1.5rem;
+    border: solid 0.1rem transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.quiz button.button__submit-quiz,
+.duck-alterego__container button.button__show-all-ducks,
+.duck-directory__container button.button__restart {
+    margin: 0 auto;
+}
+
+.quiz button.button__submit-quiz:hover,
+.duck-alterego__container button.button__show-all-ducks:hover,
+.duck-directory__duck button.button__toggle-info:hover,
+.duck-directory__container button.button__restart:hover {
+    background-color: var(--yellow);
+    background-repeat: round;
+    /* background-position-y: 0.1rem; */
+    color: transparent;
+    transition: background-image 300ms;
+}
+
+.quiz button.button__submit-quiz:hover {
+    background-position-x: -0.12rem;
+    background-image: url("../assets/ducks/general-imagery/duck_side_icon.png");
+}
+
+.duck-alterego__container button.button__show-all-ducks:hover {
+    background-position-x: -0.12rem;
+    background-image: url("../assets/ducks/general-imagery/duck_flipper_icon.png");
+}
+
+.duck-directory__duck button.button__toggle-info:hover {
+    background-image: url("../assets/ducks/general-imagery/duck_face_icon.png");
+}
+
+.duck-directory__container button.button__restart:hover {
+    background-image: url("../assets/ducks/general-imagery/duck_wings_icon.png");
+}

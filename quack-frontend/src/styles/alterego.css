@@ -1,0 +1,133 @@
+.duck-alterego__container {
+
+}
+
+.duck-alterego__container h2 {
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1;
+    /* color: var(--light-green); */
+}
+
+.duck-alterego__info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.scores__container {
+    display: flex;
+    /* flex-flow: row wrap; */
+    flex-direction: column;
+    justify-content: space-around;
+    /* padding: 0 2rem; */
+    margin: 1rem 0 1rem 1rem;
+    border: 0.3rem solid var(--dark-green);
+    border-radius: 5px;
+}
+
+.user-scores__name,
+.duck-alterego-scores__name {
+    font-family: 'Henny-Penny';
+    font-size: 2rem;
+    color: var(--silver);
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 0.3rem;
+    text-decoration-skip-ink: none;
+}
+
+.user-scores,
+.duck-alterego-scores {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 1rem;
+    /* border: 0.3rem solid var(--orange); */
+    /* border-radius: 5px; */
+    background-color: var(--dark-green);
+}
+
+.user-scores__score,
+.duck-alterego-scores__score {
+    font-size: 1.2rem;
+    color: var(--silver);
+}
+
+.duck-alterego__stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 1rem 0 ;
+    padding: 2rem 1rem;
+    border-top: solid 0.3rem var(--light-green);
+    border-bottom: solid 0.3rem var(--light-green);
+    border-left: solid 0.3rem var(--light-green);
+}
+
+.duck-alterego__stats div {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.duck-alterego__stats span {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.duck-alterego__status {
+    /* width: 100%; */
+    /* padding: 1rem;
+    margin: 0 3rem; */
+    text-align: center;
+    /* border: solid 0.3rem var(--light-green); */
+    /* border-radius: 5px; */
+    font-size: 2rem;
+
+}
+
+.duck-alterego__status .status--underline {
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 0.3rem;
+    text-decoration-skip-ink: none;
+}
+
+.duck-alterego__gallery-bio {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+ }
+
+.duck-alterego__gallery {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.duck-alterego__gallery .duck-alterego-gallery__item {
+    max-width: 30rem;
+    margin-bottom: auto;
+}
+
+.duck-alterego__general,
+.duck-alterego__threats {
+    margin: 0.5rem;
+    white-space: break-spaces;
+}
+
+.duck-alterego__threats {
+    margin: 2rem 1rem 0 0;
+
+    border-top: solid 0.3rem var(--orange);
+    border-right: solid 0.3rem var(--orange);
+    padding: 0.5rem;
+    /* border-radius: 5px; */
+}
+
+.duck-alterego-threats__title {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
