@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import { submitQuiz } from "../app/actions.js";
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -20,15 +21,9 @@ export default function DisplayQuiz() {
 
 	useEffect(() => {
 		async function getQuestions() {
-			let response = await fetch(`http://localhost:5000/duck_quiz`);
-	
-			if (!response.ok) {
-				const message = `An error occured: ${response.statusText}`;
-				window.alert(message);
-				return;
-			}	
+			const response = await axios.get(`https://eu-west-1.aws.data.mongodb-api.com/app/application-0-uwitl/endpoint/duck_quiz`);
+            const quizContent = await response.data;
 				
-			let quizContent = await response.json();
 			setQuizContent(quizContent);
 		}
 	

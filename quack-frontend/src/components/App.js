@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { getDucks } from '../app/actions';
 
@@ -21,14 +22,19 @@ function App(props) {
 
 	useEffect(() => {
 		async function getDucks() {
-			let response = await fetch(`http://localhost:5000/duck_info`);
+			// let response = await fetch(`http://localhost:5000/duck_info`);
 	
-			if (!response.ok) {
-				return;
-			}	
+			// if (!response.ok) {
+			// 	return;
+			// }	
 				
-			let duckData = await response.json();
+			// let duckData = await response.json();
 			// setDucks(ducks);
+
+			const response = await axios.get(`https://eu-west-1.aws.data.mongodb-api.com/app/application-0-uwitl/endpoint/duck_info`);
+    		const duckData = await response.data;
+
+
 			dispatch({
 				type: 'GET_DUCKS',
 				duckData: duckData
