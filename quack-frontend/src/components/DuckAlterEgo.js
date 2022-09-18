@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function DisplayDuckAlterEgo(props) {
@@ -56,7 +56,7 @@ export default function DisplayDuckAlterEgo(props) {
                 <div className="duck-alterego__gallery">
                     {duckAlterEgo.assets.map(asset => {
                         return (
-                            <img className="duck-alterego-gallery__item" src={require(`../assets/ducks/featured-species/${asset}`)} />
+                            <img className="duck-alterego-gallery__item" src={require(`../assets/ducks/featured-species/${asset}`)} alt={duckAlterEgo.common_name}/>
                         )
                     })}
                 </div>

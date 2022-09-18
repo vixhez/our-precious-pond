@@ -1,7 +1,3 @@
-import { useReducer } from "react";
-import initial from './initial';
-// import './actions.js';
-
 const reducer = (state, action) => {
     switch (action.type) {
         case 'GET_DUCKS': 

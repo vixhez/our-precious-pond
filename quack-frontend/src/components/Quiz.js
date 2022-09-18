@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { submitQuiz } from "../app/actions.js";
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export default function DisplayQuiz() {
     const dispatch = useDispatch();

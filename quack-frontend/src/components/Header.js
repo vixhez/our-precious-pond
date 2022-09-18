@@ -26,9 +26,6 @@ export default function Header() {
         let headerHeight = header.offsetHeight;
         let stickyFiller = document.querySelector('.app-header--sticky__filler');
 
-        console.log('event is intersecting', event[0].isIntersecting);
-        console.log(appContainer.scrollTop);
-
         if (event[0].isIntersecting || appContainer.scrollTop === 0) {
             header.classList.remove('app__header--sticky');
             stickyFiller.style.paddingTop = 0;
@@ -44,7 +41,7 @@ export default function Header() {
         <>
             <div className="app-header--sticky__filler"></div>
             <div className="app__header">
-                <img src={Mallard} alt="" />
+                <img src={Mallard} alt="Mallard duck" />
                 <h1>Our Precious Pond</h1>
             </div>
         </>

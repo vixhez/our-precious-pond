@@ -1,5 +1,6 @@
 .duck-directory__container {
-    padding: 1rem;
+    max-width: 100%;
+    padding-bottom: 1rem;
 }
 
 .duck-directory__duck {
@@ -7,6 +8,12 @@
     flex-flow: row wrap;
     align-items: center;
     margin: 2rem 0;
+}
+
+@media (max-width: 989px) {
+    .duck-directory__duck {
+        justify-content: center;
+    }
 }
 
 .duck-directory__duck .duck__img {
@@ -17,8 +24,15 @@
 .duck-directory__duck .duck__stats {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    max-width: 40%;
+    padding: 2rem;
+    max-width: 15rem;
+}
+
+@media (min-width: 990px) {
+    .duck-directory__duck .duck__stats {
+        max-width: 40%;
+        padding: 1rem;
+    }
 }
 
 .duck-directory__duck .duck__stats * {
@@ -26,11 +40,17 @@
 }
 
 .duck-directory__duck .duck__common-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1;
     font-family: 'Henny-Penny';
     margin-bottom: 0.5rem;
     /* color: var(--light-green); */
+}
+
+@media (min-width: 990px) {
+    .duck-directory__duck .duck__common-name {
+        font-size: 2.5rem;
+    }
 }
 
 .duck__stats .duck__stats--underline {
@@ -49,9 +69,22 @@
     text-decoration-skip-ink: none;
 }
 
+@media (max-width: 989px) {
+    .duck-directory__duck .duck__status {
+        text-align: center;
+    }
+}
+
 .duck-directory__duck .duck__bio {
     display: none;
     white-space: break-spaces;
+}
+
+@media (max-width: 989px) {
+    .duck-directory__duck .duck__bio {
+        font-size: 0.95rem;
+        margin: 0 1rem;
+    }
 }
 
 .duck__bio .duck__threats {
@@ -59,5 +92,11 @@
 }
 
 .duck-directory__duck button {
-    margin: 0 3rem 0 auto;
+    margin: 0 auto 1.5rem auto;
+}
+
+@media (min-width: 990px) {
+    .duck-directory__duck button {
+        margin: 0 3rem 0 auto;
+    }
 }

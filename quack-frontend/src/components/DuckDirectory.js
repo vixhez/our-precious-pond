@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function DisplayAllDucks(props) {
@@ -37,7 +37,7 @@ export default function DisplayAllDucks(props) {
 			{props.ducks.map((duck) => {
 				return (
 					<div className="duck-directory__duck" key={duck.id}>
-						<img className="duck__img" src={require(`../assets/ducks/featured-species/${duck.assets[0]}`)} />
+						<img className="duck__img" src={require(`../assets/ducks/featured-species/${duck.assets[0]}`)} alt={duck.common_name}/>
 						<div className="duck__stats">
 							<span className="duck__common-name">
 								{duck.common_name}
