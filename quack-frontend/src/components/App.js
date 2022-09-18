@@ -8,6 +8,7 @@ import Info from './Info.js';
 import Quiz from './Quiz.js'
 import DuckDirectory from './DuckDirectory.js';
 import DuckAlterEgo from './DuckAlterEgo.js'
+import HitCounter from './HitCounter.js';
 import initial from '../app/initial';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/index.css';
@@ -47,23 +48,27 @@ function App(props) {
 
 
 	return (
-		<div className='app__container'>
-			<Header />
-			<Info />
-			{
-				!quizComplete ? (
-				!ducksLoaded ?
-					<p>one sec, the ducks are on their merry way!!</p>
-				: 
-					<Quiz />
-			) : (
-				!showAllDucks ? (
-					<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
+		<>
+			<div className='app__container'>
+				<Header />
+				<Info />
+				{
+					!quizComplete ? (
+					!ducksLoaded ?
+						<p>one sec, the ducks are on their merry way!!</p>
+					: 
+						<Quiz />
 				) : (
-					<DuckDirectory ducks={ducks} />
-				)
-			)}
-		</div>
+					!showAllDucks ? (
+						<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
+					) : (
+						<DuckDirectory ducks={ducks} />
+					)
+				)}
+				
+			</div>
+			<HitCounter />
+		</>
 	)
 }
 
