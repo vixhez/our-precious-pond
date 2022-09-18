@@ -9,7 +9,7 @@ export default function Header() {
 
         let options = {
             root: document.querySelector('.app__container'),
-            rootMargin: '0px',
+            rootMargin: '0px 0px 400px 0px',
             threshold: 0,
         }
         
@@ -26,8 +26,10 @@ export default function Header() {
         let headerHeight = header.offsetHeight;
         let stickyFiller = document.querySelector('.app-header--sticky__filler');
 
+        console.log('event is intersecting', event[0].isIntersecting);
+        console.log(appContainer.scrollTop);
 
-        if (event[0].isIntersecting) {
+        if (event[0].isIntersecting || appContainer.scrollTop === 0) {
             header.classList.remove('app__header--sticky');
             stickyFiller.style.paddingTop = 0;
         } else {
