@@ -50,7 +50,7 @@ export default function DisplayDuckAlterEgo(props) {
                 </div>
             </div>
             <div className="duck-alterego__status">
-                    <span>Conservation status:</span> <span className="status--underline">{duckAlterEgo.status}</span>
+                <span>Conservation status:</span> <span className="status--underline">{duckAlterEgo.status}</span>
             </div>
             <div className="duck-alterego__gallery-bio">
                 <div className="duck-alterego__gallery">
@@ -67,7 +67,7 @@ export default function DisplayDuckAlterEgo(props) {
                     <div className="duck-alterego__threats">
                         <h6 className="duck-alterego-threats__title">Threats to the {duckAlterEgo.common_name}</h6>
                         {duckAlterEgo.threats}
-                </div>
+                    </div>
                 </div>
             </div>
             <button

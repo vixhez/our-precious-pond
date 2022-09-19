@@ -24,7 +24,7 @@
 
 @media (min-width: 990px) {
     .info__container .button__toggle-info-modal.modal--open {
-        right: 2.3rem;
+        right: 2.6rem;
     }
 }
 
@@ -54,9 +54,7 @@
 
 @media (min-width: 750px) {
     .app__container .info__modal {
-        /* max-width: 80%; */
         padding: 5rem 2rem 2rem 2rem;
-
     }
 }
 
@@ -66,24 +64,19 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    /* justify-content: center; */
-    /* margin-top: 9rem; */
 }
 
 @media (min-width: 750px) {
     .info__modal .modal__assets-sections-container
- {
+    {
         flex-direction: row;
         align-items: flex-start;
-        /* border-right: solid 0.3rem var(--orange); */
         margin: 0;
-        /* min-width: 80%; */
         width: 100%;
     }
 }
 
-.modal__assets-sections-container
- .modal__sections {
+.modal__assets-sections-container .modal__sections {
     border: solid 0.3rem var(--orange);
     border-radius: 5px;
     width: 85%;
@@ -95,12 +88,13 @@
 }
 
 @media (min-width: 750px) {
-    .modal__assets-sections-container
- .modal__sections {
-        /* max-width: 60%; */
-        /* min-width: 60%; */
+    .modal__assets-sections-container .modal__sections {
         border: none;
         align-items: flex-start;
+        justify-content: flex-start;
+        border-top: solid 0.3rem var(--orange);
+        border-left: solid 0.3rem var(--orange);
+        min-height: 100%;
     }
 }
 
@@ -108,7 +102,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    /* margin-bottom: 1rem; */
     margin: 0 auto 1rem auto;
 }
 
@@ -132,14 +125,18 @@
     overflow-wrap: anywhere;
 }
 
+.modal__sections ul {
+    padding-left: 1rem;
+}
+
 .modal__assets-sections-container .modal__assets {
     display: flex;
     flex-flow: column;
+    align-items: center;
 }
 
 .modal__assets-sections-container .modal__assets img {
     max-width: 20rem;
-    margin-right: 1rem;
 }
 
 @media (max-width: 750px) {
@@ -153,6 +150,10 @@
     display: flex;
     flex-direction: row;
     margin: 0.5rem auto 0 auto;
+}
+
+.modal__assets .asset__external-link:first-child {
+    margin-right: 1rem;   
 }
 
 .modal__assets .asset__external-link img {

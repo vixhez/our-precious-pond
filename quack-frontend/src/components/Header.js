@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Mallard from '../assets/ducks/general-imagery/mallard_transparent.png';
 
 export default function Header() {
-
     useEffect(() => {
         let observer;
 

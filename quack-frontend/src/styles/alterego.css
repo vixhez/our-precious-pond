@@ -7,7 +7,6 @@
     font-size: 2.5rem;
     text-align: center;
     line-height: 1;
-    /* color: var(--light-green); */
 }
 
 @media (min-width: 990px) {
@@ -25,10 +24,8 @@
 
 .scores__container {
     display: flex;
-    /* flex-flow: row wrap; */
     flex-direction: column;
     justify-content: space-around;
-    /* padding: 0 2rem; */
     margin: 1rem;
     border: 0.3rem solid var(--dark-green);
     border-radius: 5px;
@@ -62,10 +59,7 @@
 .duck-alterego-scores {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding: 1rem;
-    /* border: 0.3rem solid var(--orange); */
-    /* border-radius: 5px; */
     background-color: var(--dark-green);
 }
 
@@ -102,7 +96,6 @@
 .duck-alterego__stats div {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
 }
 
 .duck-alterego__stats span {
@@ -111,12 +104,7 @@
 }
 
 .duck-alterego__status {
-    /* width: 100%; */
-    /* padding: 1rem;
-    margin: 0 3rem; */
     text-align: center;
-    /* border: solid 0.3rem var(--light-green); */
-    /* border-radius: 5px; */
     font-size: 1.5rem;
 }
 
@@ -187,7 +175,6 @@
     border-top: solid 0.3rem var(--orange);
     border-right: solid 0.3rem var(--orange);
     padding: 0.5rem;
-    /* border-radius: 5px; */
 }
 
 @media (min-width: 750px) {

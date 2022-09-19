@@ -41,27 +41,15 @@ export default function DisplayAllDucks(props) {
 						<div className="duck__stats">
 							<span className="duck__common-name">
 								{duck.common_name}
-								</span>
+							</span>
 							<span className="duck__latin-name">
-								<span className="duck__stats--underline">
-									Latin name: 
-								</span> <span>
-									{duck.latin_name}
-								</span>
+								<span className="duck__stats--underline">Latin name: </span> <span>{duck.latin_name}</span>
 							</span>
 							<span className="duck__location">
-								<span className="duck__stats--underline">
-									Location:
-								</span> <span>
-									{duck.location}
-								</span>
+								<span className="duck__stats--underline">Location:</span> <span>{duck.location}</span>
 							</span>
 							<span className="duck__pop-size">
-								<span className="duck__stats--underline">
-									Population:
-								</span> <span>
-									{duck.pop_size}
-								</span>
+								<span className="duck__stats--underline">Population:</span> <span>{duck.pop_size}</span>
 							</span>
 							<span className="duck__status">
 								{duck.status}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 export default function DisplayQuiz() {
     const dispatch = useDispatch();
@@ -27,48 +27,48 @@ export default function DisplayQuiz() {
 		}
 	
 		getQuestions();
-	}, [quizContent.length]);
-
-
+	}, []);
 
     function renderQuiz() {
         let quiz = [];
 
-        quizContent.map(quizCategory => {
+        quizContent.forEach(quizCategory => {
             let quizItems = Object.values(quizCategory)[1];
-            quizItems.map((quizItem, index) => {
+            quizItems.forEach((quizItem, index) => {
                 let answersQuantity = Object.keys(quizItem).filter(key => key.includes('answer')).length;
-
                 let quizItemAnswers = [];
+
                 for (let i = 0; i < answersQuantity; i++) {
                     let currentAnswer = `answer_${i+1}`;
                     quizItemAnswers.push(
-                        <div className={`quiz__answer`}>
+                        <li className='quiz__answer' key={`li-${index}-${i}`}>
                             <input
                                 onClick={handleInputClick}
                                 type="radio"
                                 id={`${Object.keys(quizCategory)[1]}-answer-${index}-${i}`}
                                 name={`${Object.keys(quizCategory)[1]}${index}`}
                                 value={`${Object.keys(quizCategory)[1]}-${i}`}
+                                key={`input-${index}-${i}`}
                             />
-                            <label htmlFor={`${Object.keys(quizCategory)[1]}-answer-${index}`}>
+                            <label
+                                htmlFor={`${Object.keys(quizCategory)[1]}-answer-${index}-${i}`}
+                                key={`label-${index}-${i}`}
+                            >
                                 {quizItem[currentAnswer]}
                             </label>
-                        </div>
+                        </li>
                     );
                 }
 
                 quiz.push(
-                <>
-                    <div className="quiz__item">
-                        <div className="quiz__question">
+                    <div className="quiz__item" key={`${Object.keys(quizCategory)[1]}-${index}`}>
+                        <div className="quiz__question" key={`quiz__question-${index}`}>
                             {quizItem.question}
                         </div>
-                        <div className="quiz__answers-container">
+                        <ul className="quiz__answers-container" key={`quiz__answers-container-${index}`}>
                             {quizItemAnswers}
-                        </div>
+                        </ul>
                     </div>
-                </>
                 );
             })
         })
@@ -90,6 +90,7 @@ export default function DisplayQuiz() {
 
     function handleQuizCompletion(event) {
         event.preventDefault();
+        
         let extroversionScore = userScores.extroversion0Score + userScores.extroversion1Score;
         let generosityScore = userScores.generosity0Score + userScores.generosity1Score;
         let activenessScore = userScores.activeness0Score + userScores.activeness1Score;

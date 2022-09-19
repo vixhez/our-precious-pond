@@ -1,10 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit';
-
-// export const store = configureStore({
-//   reducer: {}
-// });
-
-
 import { createStore, applyMiddleware, compose } from "redux";
 import reducer from "./reducer";
 import initial from "./initial";
@@ -21,16 +14,3 @@ export const store = createStore(
 );
 
 export default store;
-
-
-// import { createStore, applyMiddleware } from 'redux';
-// import { composeWithDevTools } from 'redux-devtools-extension';
-// import thunk from "redux-thunk";
-
-// const store = createStore(reducer, composeWithDevTools(
-//   applyMiddleware(...middleware),
-//   composeEnhancers(applyMiddleware(thunk))
-//   // other store enhancers if any
-// ));
-
-// export default store;

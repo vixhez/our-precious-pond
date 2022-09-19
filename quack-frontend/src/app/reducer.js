@@ -5,7 +5,6 @@ const reducer = (state, action) => {
                 ...state,
                 ducks: action.duckData,
                 ducksLoaded: true
-
             }
         case 'CALCULATE_DUCK_ALTEREGO': {
             let extroversionScore = action.payload.extroversionScore * 2.5;
@@ -28,7 +27,6 @@ const reducer = (state, action) => {
                 
                 let duckAlterEgo = flatDuckMatches.reduce((acc, currentValue) => {
                     counts[currentValue.common_name] ? counts[currentValue.common_name]++ : counts[currentValue.common_name] = 1;
-                    //   return acc > currentValue ? acc : currentValue;
                     return counts[acc.common_name] > counts[currentValue.common_name] ? acc : currentValue;
                 }, {})
                 
@@ -49,8 +47,7 @@ const reducer = (state, action) => {
         case 'SHOW_ALL_DUCKS': 
             return {
                 ...state,
-            showAllDucks: true
-
+                showAllDucks: true
             }
         case 'RESTART_QUIZ':
             return {
@@ -59,8 +56,8 @@ const reducer = (state, action) => {
                 showAllDucks: false
             }
         default:
-            return state
+            return state;
     }
- };
+};
 
 export default reducer;

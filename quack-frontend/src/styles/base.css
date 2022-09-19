@@ -4,7 +4,6 @@
     --light-green: rgb(99, 236, 139);
     --dark-green: rgb(14, 58, 16);
     /* --dark-green: #2b6633; */
-    /* --dark-green: fuschia; */
     /* --orange: rgb(201, 85, 51); */
     --orange: #fc8236;
     /* --silver: rgb(179, 171, 164); */
@@ -32,14 +31,12 @@ body {
     margin: 2rem;
     border-radius: 10px;
     box-shadow: -0.8rem 0.8rem var(--yellow);
-    max-height: 82vh;
+    max-height: 76vh;
     overflow-y: scroll;
 }
 
 @media (min-width: 990px) {
     .app__container {
-        /* max-width: 70%; */
-        /* float: right; */
         width: 75vw;
         margin: 3rem auto;
         max-height: 75vh;
@@ -65,8 +62,8 @@ body {
 
 .info__container button.button__toggle-info {
     font-size: 0.7rem;
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     margin: 0.2rem;
 }
 
@@ -83,7 +80,6 @@ body {
 .info__container button.button__toggle-info:hover {
     background-color: var(--yellow);
     background-repeat: round;
-    /* background-position-y: 0.1rem; */
     color: transparent;
     transition: background-image 300ms;
 }

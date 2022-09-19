@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import Header from './Header.js';
@@ -7,7 +8,7 @@ import Quiz from './Quiz.js'
 import DuckDirectory from './DuckDirectory.js';
 import DuckAlterEgo from './DuckAlterEgo.js'
 import HitCounter from './HitCounter.js';
-import { useSelector, useDispatch } from 'react-redux';
+
 import '../styles/index.css';
 
 function App(props) {
@@ -20,18 +21,8 @@ function App(props) {
 
 	useEffect(() => {
 		async function getDucks() {
-			// let response = await fetch(`http://localhost:5000/duck_info`);
-	
-			// if (!response.ok) {
-			// 	return;
-			// }	
-				
-			// let duckData = await response.json();
-			// setDucks(ducks);
-
 			const response = await axios.get(`https://eu-west-1.aws.data.mongodb-api.com/app/application-0-uwitl/endpoint/duck_info`);
     		const duckData = await response.data;
-
 
 			dispatch({
 				type: 'GET_DUCKS',
@@ -42,8 +33,6 @@ function App(props) {
 		getDucks(); 
 	}, []);
 
-
-
 	return (
 		<>
 			<div className='app__container'>
@@ -51,18 +40,18 @@ function App(props) {
 				<Info />
 				{
 					!quizComplete ? (
-					!ducksLoaded ?
-						<p>one sec, the ducks are on their merry way!!</p>
-					: 
-						<Quiz />
-				) : (
-					!showAllDucks ? (
-						<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
+						!ducksLoaded ?
+							<p>The ducks are on their merry way!</p>
+						: 
+							<Quiz />
 					) : (
-						<DuckDirectory ducks={ducks} />
+						!showAllDucks ? (
+							<DuckAlterEgo duckAlterEgo={duckAlterEgo} />
+						) : (
+							<DuckDirectory ducks={ducks} />
+						)
 					)
-				)}
-				
+				}
 			</div>
 			<HitCounter />
 		</>

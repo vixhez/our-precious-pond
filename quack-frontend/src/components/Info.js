@@ -35,22 +35,22 @@ export default function Info() {
 
     return (
         <div className="info__container">
-                <button
-                    className="button__toggle-info-modal"
-                    aria-label="Toggle info modal"
-                    onClick={toggleInfoModal}
-                >
-                    i
-                </button>
+            <button
+                className="button__toggle-info-modal"
+                aria-label="Toggle info modal"
+                onClick={toggleInfoModal}
+            >
+                i
+            </button>
             <div className="info__modal">
                 <div className="modal__assets-sections-container">
                     <div className="modal__assets">
                         <img src={BioImage} alt="Victoria relaxing with ducks" />
                         <div className="assets__external-links">
-                            <a class="asset__external-link github" href="https://github.com/vixhez/our-precious-pond" target="_blank" rel="noreferrer">
+                            <a className="asset__external-link github" href="https://github.com/vixhez/our-precious-pond" target="_blank" rel="noreferrer">
                                 <img src={GitHub} alt="GitHub logo" />
                             </a>
-                            <a class="asset__external-link linkedin" href="https://linkedin.com/in/victoria-herod" target="_blank" rel="noreferrer">
+                            <a className="asset__external-link linkedin" href="https://linkedin.com/in/victoria-herod" target="_blank" rel="noreferrer">
                                 <img src={LinkedIn} alt="LinkedIn logo" />
                             </a>
                         </div>
@@ -58,11 +58,11 @@ export default function Info() {
                     <div className="modal__sections">
                         <div className="modal__section-buttons">
                             <button
-                                    id="bio"
-                                    className="button__toggle-info button__toggle-info--bio"
-                                    onClick={toggleInfoModalSection}
-                                >
-                                    About
+                                id="bio"
+                                className="button__toggle-info button__toggle-info--bio"
+                                onClick={toggleInfoModalSection}
+                            >
+                                About
                             </button>
                             <button
                                 id="resources"
@@ -79,18 +79,18 @@ export default function Info() {
                                 References
                             </button>   
                         </div>
-                        <div class="info-section" id="bio">
-                                Hello there!
-                                I hope this biography finds you thriving and in anticipation of finding out your duck alter ego via the quiz - it is, after all, *sacred knowledge*. 
-                                Jokes aside, this is of course no genuine attempt to psycho-analyse anyone or to re-create the Myers-Briggs Indicator. Above all, I have created this app because 1) I wanted to highlight the wonderful species of ducks that are under conservation threat, 2) I love to code, and 3) I ADORE DUCKS.
-                                <br /><br />
-                                Having grown up in the blessed countryside of Hertfordshire, I've been mates with Indian Runner and Mallard ducks since I was miniature. From day 1, I have loved their quirks, their honks, and their attitude!
-                                <br /><br />
-                                Building this app has been a really stimulating process, and it's been wicked to discover new varieties of duck along the way, as well as jarring to then discover they are at risk. It felt important for me to put a spotlight on (just some of) the fantastic duck varieties on our beautiful planet that are being flagged by the IUCN (International Union for Conservation of Nature) as at-risk groups. In that spirit, I have also included in this section some resources around duck conservation if you would like to know more.
-                                <br /><br />
-                                Go forth and soak in the duck magic! I hope you have fun learning about these gorgeous, radiant and savvy creatures.
+                        <div className="info-section" id="bio">
+                            Hello there!
+                            I hope this biography finds you thriving and in anticipation of finding out your duck alter ego via the quiz - it is, after all, *sacred knowledge*. 
+                            Jokes aside, this is of course no genuine attempt to psycho-analyse anyone or to re-create the Myers-Briggs Indicator. Above all, I have created this app because 1) I wanted to highlight the wonderful species of ducks that are under conservation threat, 2) I love to code, and 3) I ADORE DUCKS.
+                            <br /><br />
+                            Having grown up in the blessed countryside of Hertfordshire, I've been mates with Indian Runner and Mallard ducks since I was miniature. From day 1, I have loved their quirks, their honks, and their attitude!
+                            <br /><br />
+                            Building this app has been a really stimulating process, and it's been wicked to discover new varieties of duck along the way, as well as jarring to then discover they are at risk. It felt important for me to put a spotlight on (just some of) the fantastic duck varieties on our beautiful planet that are being flagged by the IUCN (International Union for Conservation of Nature) as at-risk groups. In that spirit, I have also included in this section some resources around duck conservation if you would like to know more.
+                            <br /><br />
+                            Go forth and soak in the duck magic! I hope you have fun learning about these gorgeous, radiant and savvy creatures.
                         </div>
-                        <div class="info-section" id="resources">
+                        <div className="info-section" id="resources">
                             <ul>
                                 <li>
                                     <a href="https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/ducks-geese-and-swans/" target="_blank" rel="noreferrer">
@@ -104,7 +104,7 @@ export default function Info() {
                                 </li>
                                 <li>
                                     <a href="https://www.treehugger.com/ways-to-help-ducks-385903" target="_blank" rel="noreferrer">
-                                        101 ways to help ducks
+                                        10 ways to help ducks
                                     </a> 
                                 </li>
                                 <li>
@@ -139,7 +139,7 @@ export default function Info() {
                                 </li>
                             </ul>
                         </div>
-                        <div class="info-section" id="references">
+                        <div className="info-section" id="references">
                             <ul>
                                 <li>
                                     https://www.waterfowl.org.uk/wildfowl/true-ducks/spectacled-eider/
