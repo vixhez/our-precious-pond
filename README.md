@@ -12,8 +12,6 @@ This was a really stimulating build, and featured me reminding myself how to use
 
 Some screenshots are attached below so you can get a flavour of the app.
 
-** at time of writing, I am yet to get the deployment to the web sorted so don't expect much yet, soon to be complete **
-
 You can find Our Precious Pond live [here](https://vixhez.github.io/our-precious-pond).
 
 
