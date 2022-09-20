@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/our-precious-pond/static/css/main.1d7b422b.css",
+    "main.css": "/our-precious-pond/static/css/main.21effbcc.css",
     "main.js": "/our-precious-pond/static/js/main.e412a461.js",
     "static/js/787.fc4e514c.chunk.js": "/our-precious-pond/static/js/787.fc4e514c.chunk.js",
     "static/media/maccoa_duck_2.jpg": "/our-precious-pond/static/media/maccoa_duck_2.a20d84b504169e6060c0.jpg",
@@ -32,12 +32,12 @@
     "static/media/duck_face_icon.png": "/our-precious-pond/static/media/duck_face_icon.7721bc28ba63db6b70a4.png",
     "static/media/linkedin.png": "/our-precious-pond/static/media/linkedin.21f0f51082c5d7b5bffc.png",
     "index.html": "/our-precious-pond/index.html",
-    "main.1d7b422b.css.map": "/our-precious-pond/static/css/main.1d7b422b.css.map",
+    "main.21effbcc.css.map": "/our-precious-pond/static/css/main.21effbcc.css.map",
     "main.e412a461.js.map": "/our-precious-pond/static/js/main.e412a461.js.map",
     "787.fc4e514c.chunk.js.map": "/our-precious-pond/static/js/787.fc4e514c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d7b422b.css",
+    "static/css/main.21effbcc.css",
     "static/js/main.e412a461.js"
   ]
 }
