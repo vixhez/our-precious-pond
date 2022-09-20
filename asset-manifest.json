@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/our-precious-pond/static/css/main.e46323a4.css",
-    "main.js": "/our-precious-pond/static/js/main.1c37ed27.js",
+    "main.css": "/our-precious-pond/static/css/main.57b5567d.css",
+    "main.js": "/our-precious-pond/static/js/main.bac267d8.js",
     "static/js/787.fc4e514c.chunk.js": "/our-precious-pond/static/js/787.fc4e514c.chunk.js",
     "static/media/maccoa_duck_2.jpg": "/our-precious-pond/static/media/maccoa_duck_2.a20d84b504169e6060c0.jpg",
     "static/media/west_indian_whistling_duck_2.jpg": "/our-precious-pond/static/media/west_indian_whistling_duck_2.c0b0ed1e2495893549ff.jpg",
@@ -32,12 +32,12 @@
     "static/media/duck_face_icon.png": "/our-precious-pond/static/media/duck_face_icon.7721bc28ba63db6b70a4.png",
     "static/media/linkedin.png": "/our-precious-pond/static/media/linkedin.21f0f51082c5d7b5bffc.png",
     "index.html": "/our-precious-pond/index.html",
-    "main.e46323a4.css.map": "/our-precious-pond/static/css/main.e46323a4.css.map",
-    "main.1c37ed27.js.map": "/our-precious-pond/static/js/main.1c37ed27.js.map",
+    "main.57b5567d.css.map": "/our-precious-pond/static/css/main.57b5567d.css.map",
+    "main.bac267d8.js.map": "/our-precious-pond/static/js/main.bac267d8.js.map",
     "787.fc4e514c.chunk.js.map": "/our-precious-pond/static/js/787.fc4e514c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e46323a4.css",
-    "static/js/main.1c37ed27.js"
+    "static/css/main.57b5567d.css",
+    "static/js/main.bac267d8.js"
   ]
 }
